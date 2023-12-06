@@ -1,0 +1,62 @@
+/* grid c6 */
+.grid-c6{
+    border: 1px solid transparent;
+    
+  }
+
+  .grid-c6:hover{
+    /* border: 1px solid var(--clr-primar-light);
+    /* background-color: var(--clr-peach); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+      rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    color: #060606; */ 
+
+    /* border: 1px solid rgba(255, 255, 255, .25); */
+  border-radius: 20px;
+  background-color: rgba(9 9 9 / 45%);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+  /* color: #060606; */
+  }
+
+  
+
+
+.grid-c6  .avatar {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: 10px;
+  }
+
+  
+  .grid-c6 .grid-item-top-l {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .grid-c6 .grid-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    /* margin-right: 15px */
+  }
+  .grid-c6 .grid-item-top-r {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .grid-c6 .grid-item-top-r .subset {
+    font-weight: 300;
+    font-size: 14px;
+    color: #8A8587;
+    text-align: right;
+  }
+
+  .grid-c6:hover .grid-item-top-r .subset {
+    /* color: #060606; */
+  }
+  
+  
