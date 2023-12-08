@@ -1,7 +1,7 @@
 // Sidebar.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { personsImgs } from '../../utils/images';
+import { personsImgs,iconsImgs } from '../../utils/images';
 import { navigationLinks } from '../../data/data';
 import './Sidebar.css';
 import { useContext } from 'react';
@@ -33,12 +33,11 @@ const Sidebar = () => {
         <ul className="nav-list">
           {navigationLinks.map((navigationLink) => (
             <li className="nav-item" key={navigationLink.id}>
-              
+
               <Link
-                to={`/page/${navigationLink.id}`} 
-                className={`nav-link ${
-                  pathname === `/page/${navigationLink.id}` ? 'active' : ''
-                }`}
+                to={`${navigationLink.page}`}
+                className={`nav-link ${pathname === `${navigationLink.page}` ? 'active' : ''
+                  }`}
               >
                 <img
                   src={navigationLink.image}
@@ -51,6 +50,14 @@ const Sidebar = () => {
           ))}
         </ul>
       </nav>
+      <div className='logout-btn'>
+        <img
+          src={iconsImgs.logout}
+          className="nav-link-icon"
+          alt="logout"
+        />
+        <span >Logout</span>
+      </div>
     </div>
   );
 };

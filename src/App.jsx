@@ -5,7 +5,6 @@ import './App.css';
 import Sidebar from './layout/Sidebar/Sidebar';
 import DashboardPage from './pages/DashboardPage';
 import MembersPage from './pages/MemberPage';
-// import Content from './layout/Content/Content'
 import Calender from './pages/Calender';
 import ApplyLeave from './pages/ApplyLeave';
 import LeaveHistory from './pages/LeaveHistory';
@@ -20,12 +19,12 @@ function App() {
         <Sidebar />
         <Routes>
           <Route path="" element={<DashboardPage/>} />
-          <Route path="/page/1" element={<DashboardPage/>} />
+          <Route path="/home" element={<DashboardPage/>} />
           {/* <Route path="/page/2" element={<MembersPage/>} /> */}
-          <Route path="/page/3" element={<Calender/>} />
-          {/* <Route path="/page/4" element={<ApplyLeave/>} /> */}
-          <Route path="/page/5" element={<LeaveHistory/>} />
-          {/* <Route path="/page/6" element={<Alerts/>} /> */}
+          <Route path="/calender" element={<Calender/>} />
+          <Route path="/applyleave" element={<ApplyLeave/>} />
+          <Route path="/leavehistory" element={<LeaveHistory/>} />
+          <Route path="/notifications" element={<Alerts/>} />
           {/* <Route path="/page/7" element={<Alerts/>} />
           <Route path="/page/8" element={<Alerts/>} /> */}
         </Routes>
