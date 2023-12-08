@@ -21,7 +21,9 @@ function App() {
           <Route path="" element={<DashboardPage/>} />
           <Route path="/home" element={<DashboardPage/>} />
           {/* <Route path="/page/2" element={<MembersPage/>} /> */}
-          <Route path="/calender" element={<Calender/>} />
+          <Route path="/calendar/leave" element={<Calender/>} />
+          <Route path="/calendar/holiday" element={<Calender/>} />
+          <Route path="/calendar/birthday" element={<Calender/>} />
           <Route path="/applyleave" element={<ApplyLeave/>} />
           <Route path="/leavehistory" element={<LeaveHistory/>} />
           <Route path="/notifications" element={<Alerts/>} />

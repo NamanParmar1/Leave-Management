@@ -1,5 +1,4 @@
 
-import { personsImgs } from '../../utils/images';
 import "./Card.css";
 
 const Card = ({member}) => {

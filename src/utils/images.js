@@ -1,25 +1,16 @@
 // icons svg images
 import alert from "../assets/icons/alert.svg";
 import bell from "../assets/icons/bell.svg";
-import bills from "../assets/icons/bills.svg";
-import budget from "../assets/icons/budget.svg";
-import card from "../assets/icons/card.svg";
-import check from "../assets/icons/check.svg";
-import empty_check from "../assets/icons/empty_check.svg";
-import gears from "../assets/icons/gears.svg";
 import home from "../assets/icons/home.svg";
-import menu from "../assets/icons/menu.svg";
-import plane from "../assets/icons/plane.svg";
-import plus from "../assets/icons/plus.svg";
-import report from "../assets/icons/report.svg";
 import search from "../assets/icons/search.svg";
-import user from "../assets/icons/user.svg";
-import wallet from "../assets/icons/wallet.svg";
-import wealth from "../assets/icons/wealth.svg";
 import calender from "../assets/icons/calendar.svg";
 import applyleave from "../assets/icons/applyleave.svg";
 import history from "../assets/icons/history.svg";
 import logout from "../assets/icons/logout.svg";
+import holiday from "../assets/icons/holiday.svg";
+import leave from "../assets/icons/leave.svg";
+import birthday from "../assets/icons/birthday.svg";
+
 
 
 // person images
@@ -40,11 +31,11 @@ import swathi from "../assets/images/swathi.jpg";
 
 
 export const iconsImgs = {
-    alert, bell, bills, budget, card, check, empty_check, gears, home, menu, plane,
-     plus, report, search, user, wallet, wealth,calender,applyleave,history,logout
+    alert, bell, home,
+    search, user, calender, applyleave, history, logout, leave, birthday, holiday
 }
 
 export const personsImgs = {
-    person_one, person_two, person_three, person_four, harshit, naman, maheswari,sunny,munirahul,swathi
+    person_one, person_two, person_three, person_four, harshit, naman, maheswari, sunny, munirahul, swathi
 };
 

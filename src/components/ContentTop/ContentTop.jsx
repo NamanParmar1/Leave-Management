@@ -10,8 +10,12 @@ function setTitle(path){
         return 'Team Members';
     }else if(path === '/page/2'){
         return 'Team Members';
-    }else if(path === '/calender'){
-        return 'Calendars';
+    }else if(path === '/calendar/leave'){
+        return 'Leave Calendar';
+    }else if(path === '/calendar/holiday'){
+        return 'Holiday Calendar';
+    }else if(path === '/calendar/birthday'){
+        return 'Birthday Calendar';
     }else if(path === '/applyleave'){
         return 'Apply Leaves';
     }else if(path === '/leavehistory'){
