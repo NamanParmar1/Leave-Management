@@ -22,6 +22,7 @@ const Sidebar = () => {
 const { oktaAuth } = useOktaAuth();
 
 const handleLogout = async () => {
+  localStorage.removeItem('hasToastShown');
   await oktaAuth.signOut();
 };
 
