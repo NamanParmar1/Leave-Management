@@ -10,6 +10,8 @@ import logout from "../assets/icons/logout.svg";
 import holiday from "../assets/icons/holiday.svg";
 import leave from "../assets/icons/leave.svg";
 import birthday from "../assets/icons/birthday.svg";
+import user from "../assets/icons/user.svg";
+import menu from "../assets/icons/menu.svg";
 
 
 
@@ -32,7 +34,7 @@ import swathi from "../assets/images/swathi.jpg";
 
 export const iconsImgs = {
     alert, bell, home,
-    search, user, calender, applyleave, history, logout, leave, birthday, holiday
+    search, user, calender, applyleave, history, logout, leave, birthday, holiday,menu
 }
 
 export const personsImgs = {

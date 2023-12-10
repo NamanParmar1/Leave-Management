@@ -62,4 +62,8 @@ export const members = [
         location: "Madhapur Bld 12A (MDH) SEZ"
     }
 ];
+//logged in user details
+export const userInfoData = {};
+
+
 

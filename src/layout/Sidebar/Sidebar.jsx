@@ -6,6 +6,10 @@ import { navigationLinks } from '../../data/data';
 import './Sidebar.css';
 import { useContext } from 'react';
 import { SidebarContext } from '../../context/sidebarContext';
+import { useOktaAuth } from '@okta/okta-react';
+
+
+
 
 const Sidebar = () => {
   const { pathname } = useLocation();
@@ -15,7 +19,12 @@ const Sidebar = () => {
   const { isSidebarOpen } = useContext(SidebarContext);
   const navigate = useNavigate();
 
-  
+const { oktaAuth } = useOktaAuth();
+
+const handleLogout = async () => {
+  await oktaAuth.signOut();
+};
+
 
   useEffect(() => {
     if (pathname.startsWith('/calendar')) {
@@ -123,7 +132,7 @@ const Sidebar = () => {
           ))}
         </ul>
       </nav>
-      <div className='logout-btn'>
+      <div className='logout-btn'  onClick={handleLogout}>
         <img
           src={iconsImgs.logout}
           className="nav-link-icon"

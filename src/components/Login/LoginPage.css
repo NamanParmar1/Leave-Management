@@ -1,0 +1,55 @@
+
+.login-page {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #333;
+  background-image: url('https://wallpaperaccess.com/full/3847412.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.cardforlogin {
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 12px; 
+  padding: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logoofapp {
+  width: 300px; 
+  height: auto;
+  margin-bottom: 20px; }
+
+
+.Buttonslogin {
+  margin-top: 30px; 
+}
+
+
+
+.btn-login {
+  padding: 18px 50px; 
+  font-size: 18px;
+  background-color: #333;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.btn-login:hover {
+  background-color: rgb(255, 111, 0);
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}

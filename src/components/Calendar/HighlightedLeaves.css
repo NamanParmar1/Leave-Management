@@ -1,0 +1,74 @@
+/* Calendar.css */
+
+.highlighted-date {
+    background-color: #ff6666;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+  }
+  /* HighlightedLeaves.css */
+
+.leave-calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the container full height of the viewport */
+    font-family: 'Arial', sans-serif;
+    margin-left: 25px;
+    margin-top: 100px;
+    width: 400px;
+    max-width: 100%;
+    background: darkgray;
+    border: 2px solid #e30d59;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2em;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  .calendar-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+  
+  .calendar {
+    width: 70%;
+    max-width: 300px; /* Adjust the maximum width as needed */
+  }
+  
+  .highlighted-date {
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .leave-details {
+    margin-left: 20px;
+  }
+  
+  .leave-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .leave-details li {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .leave-details li p {
+    margin: 0;
+    color: #777; /* Adjust the text color as needed */
+  }
+  
+  /* Add additional styling as needed */
+  

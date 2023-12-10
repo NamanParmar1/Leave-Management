@@ -1,8 +1,10 @@
 import { iconsImgs } from "../../utils/images";
 import "./ContentTop.css";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../../context/sidebarContext";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useOktaAuth } from '@okta/okta-react';
+import { userInfoData } from "../../data/data";
 
 
 function setTitle(path){
@@ -35,14 +37,33 @@ const ContentTop = () => {
   const title = setTitle(pathname);
   const navigate = useNavigate();
 
+
+
+  const { authState, oktaAuth } = useOktaAuth();
+  const [userInfo, setUserInfo] = useState(null);
+  
+  useEffect(() => {
+    if (!authState || !authState.isAuthenticated) {
+        // When the user isn't authenticated, forget any user info
+        setUserInfo(userInfoData);
+      } else {
+        setUserInfo(authState.idToken.claims);
+        // Update userInfoData in data.js
+        Object.assign(userInfoData, authState.idToken.claims);
+      }
+  }, [authState, oktaAuth]); 
+
+
+
   const navigateToAlerts = () => {
     navigate('/notifications');
   };
 
+  
 
 
 
-
+  console.log(userInfo);
   return (
     <>
     <div className="main-content-top">
@@ -66,7 +87,7 @@ const ContentTop = () => {
         </div>
     </div>
     <div>
-    <h3 className="content-top-title">Welcome, Ganesan Maheswari</h3>  
+    <h3 className="content-top-title">Welcome, {userInfo?.name}</h3>  
     </div>
     </>
   )

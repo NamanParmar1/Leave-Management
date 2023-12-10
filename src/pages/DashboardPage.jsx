@@ -6,6 +6,7 @@ import Card from '../components/Card/Card';
 import MemberDetails from '../components/MemberDetails/MemberDetails'; // Adjust the path accordingly
 import { members } from '../data/data';
 import './DashboardPage.css';
+import Sidebar from '../layout/Sidebar/Sidebar';
 
 const DashboardPage = () => {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -23,6 +24,8 @@ const DashboardPage = () => {
   };
 
   return (
+    <>
+    <Sidebar/>
     <div className='main-content'>
       <ContentTop />
       <div className='card-container'>
@@ -36,11 +39,13 @@ const DashboardPage = () => {
           </div>
         ))}
       </div>
+      
 
       {/* {selectedMember && (
         <MemberDetails member={selectedMember} onClose={handleCloseDetails} />
       )} */}
     </div>
+    </>
   );
 };
 
