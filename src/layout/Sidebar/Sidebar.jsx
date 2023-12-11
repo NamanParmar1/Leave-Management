@@ -1,5 +1,5 @@
 // Sidebar.jsx
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { personsImgs, iconsImgs } from '../../utils/images';
 import { navigationLinks } from '../../data/data';
@@ -22,8 +22,7 @@ const Sidebar = () => {
 const { oktaAuth } = useOktaAuth();
 
 const handleLogout = async () => {
-  localStorage.removeItem('hasToastShown');
-  await oktaAuth.signOut();
+  await oktaAuth.signOut()
 };
 
 

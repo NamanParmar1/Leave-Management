@@ -18,15 +18,23 @@ import LoginPage from './components/Login/LoginPage';
 // import LeaveApplication from './components/Leave/LeaveApplication';
 import ApplyLeave from './components/Leave/ApplyLeave';
 import LeaveCalendar from './components/Calendar/LeaveCalendar';
-
-
+import leaveData from './data/LeaveData';
+import { userInfoData } from './data/data';
+import { useLeaveContext } from './context/LeaveContext';
+import { useEffect } from 'react';
 
 function App() {
+  console.log(userInfoData.name);
   const navigate = useNavigate();
   const restoreOriginalUri = async (_oktaAuth, originalUri) => {
     navigate(originalUri || '/home', { replace: true });
   };
+  const { setLeaveData } = useLeaveContext();
 
+  useEffect(() => {
+    const storedLeaveData = JSON.parse(localStorage.getItem('leaveData')) || [];
+    setLeaveData(storedLeaveData);
+  }, [setLeaveData]);
 
   return (
     <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>

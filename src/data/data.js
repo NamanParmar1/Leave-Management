@@ -62,8 +62,19 @@ export const members = [
         location: "Madhapur Bld 12A (MDH) SEZ"
     }
 ];
-//logged in user details
 export const userInfoData = {};
 
-
-
+export const users = {
+    user1: {
+        name: 'Sunny Chakraborty',
+        email: 'sunny@chakraborty.com',
+        leaveData: [],
+      },
+      user2: {
+        name: 'Naman Parmar',
+        email: 'naman@parmar.com',
+        leaveData: [],
+      },
+      // Add similar entries for other users
+    };
+  

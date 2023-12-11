@@ -7,18 +7,12 @@ import MemberDetails from '../components/MemberDetails/MemberDetails'; // Adjust
 import { members } from '../data/data';
 import './DashboardPage.css';
 import Sidebar from '../layout/Sidebar/Sidebar';
-import { userInfoData } from '../data/data';
 
 const DashboardPage = () => {
   const [selectedMember, setSelectedMember] = useState(null);
 
   useEffect(() => {
-    const hasToastShown = localStorage.getItem('hasToastShown');
-
-    if (!hasToastShown) {
-      toast.success(`Welcome, ${userInfoData?.name}!`);
-      localStorage.setItem('hasToastShown', 'true');
-    }
+    toast.success("Welcome");
   }, []);
 
   const handleCardClick = (member) => {
