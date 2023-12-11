@@ -1,116 +1,75 @@
-// import React, { useEffect } from 'react';
-// import Calendar from 'react-calendar';
-// import 'react-calendar/dist/Calendar.css';
-// import Sidebar from '../../layout/Sidebar/Sidebar';
-// import { toast } from 'react-toastify';
-// import ContentTop from '../ContentTop/ContentTop';
-// import { useLeaveContext } from '../../context/LeaveContext';
-
-// const LeaveCalendar = () => {
-//   const { leaveData } = useLeaveContext();
-
-//   useEffect(() => {
-//     toast.success('Leave Calendar');
-//   }, []);
-
-//   const getHighlightedDates = () => {
-//     return Array.isArray(leaveData) ? leaveData.map((leave) => new Date(leave.startDate)) : [];
-//   };
-
-//   return (
-//     <>
-//       <Sidebar />
-//       <div className='main-content'>
-//         <ContentTop />
-//         <Calendar
-//           tileContent={({ date, view }) =>
-//             view === 'month' &&
-//             getHighlightedDates().some((d) => d.toDateString() === date.toDateString()) ? (
-//               <div style={{ backgroundColor: 'red', borderRadius: '50%', height: '10px', width: '10px' }}></div>
-//             ) : null
-//           }
-//         />
-//         <ul>
-//           {Array.isArray(leaveData) &&
-//             leaveData.map((leave) => (
-//               <li key={leave.id}>
-//                 {leave.leaveType} Leave: {leave.startDate} to {leave.endDate}
-//               </li>
-//             ))}
-//         </ul>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default LeaveCalendar;
-
-
 import React, { useState, useEffect } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
 import Sidebar from '../../layout/Sidebar/Sidebar';
 import { toast } from 'react-toastify';
 import ContentTop from '../ContentTop/ContentTop';
-import { useLeaveContext } from '../../context/LeaveContext';
 import './HighlightedLeaves.css';
+import { useLeaveContext } from '../../context/LeaveContext';
 
 const LeaveCalendar = () => {
-  const { leaveData } = useLeaveContext();
+  const { leaveData: contextLeaveData, setLeaveData } = useLeaveContext();
+  const [leaveData, setLocalLeaveData] = useState(contextLeaveData || []);
   const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     toast.success('Leave Calendar');
-  }, []);
+    // If leaveData is empty, fetch it from localStorage
+    if (!leaveData || leaveData.length === 0) {
+      const storedLeaveData = JSON.parse(localStorage.getItem('leaveData')) || [];
+      setLeaveData(storedLeaveData);
+    }
+  }, [leaveData, setLeaveData]);
 
   const getHighlightedDates = () => {
-    return Array.isArray(leaveData) ? leaveData.map((leave) => new Date(leave.startDate)) : [];
+    return Array.isArray(leaveData)
+      ? leaveData.map((leave, index) => ({
+        title: `${leave.Name}'s Leave`,
+        start: new Date(leave.startDate),
+        end: new Date(leave.endDate),
+        description: (leave.reason),
+        color: getRandomColor(index),
+      }))
+      : [];
   };
 
-  const handleDateClick = (date) => {
-    setSelectedDate(date);
+  const getRandomColor = (index) => {
+    const colors = ['red', 'green', 'blue', 'purple', 'orange' ,'violet'];
+    return colors[index % colors.length];
   };
 
-  const getLeaveDetailsForDate = () => {
-    if (!selectedDate) {
-      return null;
-    }
-
-    const selectedDateString = selectedDate.toDateString();
-    const leaveDetailsForDate = leaveData.filter(
-      (leave) => new Date(leave.startDate).toDateString() === selectedDateString
-    );
-
-    return (
-      <ul>
-        {leaveDetailsForDate.map((leave) => (
-          <li key={leave.id}>
-            {leave.leaveType} Leave: {leave.startDate} to {leave.endDate}
-          </li>
-        ))}
-      </ul>
-    );
+  const handleDateClick = (info) => {
+    setSelectedDate(info.dateStr);
   };
+
+  const eventContent = ({ event }) => (
+    <>
+      <p>{event.title}{event.description}</p>
+      <p>{event.description}</p>
+    </>
+  );
 
   return (
     <>
       <Sidebar />
       <div className='main-content'>
         <ContentTop />
-        <div className="calendar-container">
-          <Calendar
-            tileContent={({ date, view }) =>
-              view === 'month' &&
-              getHighlightedDates().some((d) => d.toDateString() === date.toDateString()) ? (
-                <div style={{ backgroundColor: 'red', borderRadius: '50%', height: '10px', width: '10px' }}></div>
-              ) : null
-            }
-            onClickDay={handleDateClick}
+        <div className='main-leave'>
+          <FullCalendar
+            plugins={[dayGridPlugin, timeGridPlugin]}
+            initialView="dayGridMonth"
+            header={{
+              left: "prev,next",
+              center: "title",
+              right: "dayGridMonth,timeGridWeek,timeGridDay"
+            }}
+            themeSystem="Simplex"
+            events={getHighlightedDates()}
+            dateClick={handleDateClick}
+            eventContent={eventContent}
+            height="600px"
           />
-          <div className="leave-details">
-            <h3>Leave Details</h3>
-            {getLeaveDetailsForDate()}
-          </div>
         </div>
       </div>
     </>

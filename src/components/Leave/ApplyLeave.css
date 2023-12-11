@@ -1,28 +1,32 @@
-.main-content {
-  align-items: center;
-  height: 100vh; /* Adjust as needed */
-
+.otherleave-content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 form {
   max-width: 400px;
+  color: white;
   width: 100%;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-image: url('https://img.freepik.com/free-photo/empty-street-dark-atmosphere_23-2150914136.jpg?t=st=1702288776~exp=1702292376~hmac=8adef3d330b2837eaad65f8ab597a7a2229b0884ebbf50904510f182f26233ef&w=1060');
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: auto;
-  margin-top: 100px;
-  justify-content: center;
+  margin: 20px auto; /* Adjust the margin for spacing between forms */
+  display: flex;
+  flex-direction: column;
 }
 
 label.apply-leave {
   display: block;
   margin-bottom: 8px;
+  color: #0056b3; /* Change the color of the titles */
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 10px;
   margin-bottom: 16px;
@@ -32,8 +36,8 @@ textarea {
 }
 
 .btn {
-  background-color: #323538;
-  color: #fff;
+  background-color: #baf8e7;
+  color: #080808;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -41,5 +45,5 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #2bff00;
 }
