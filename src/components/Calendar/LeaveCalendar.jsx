@@ -14,7 +14,7 @@ const LeaveCalendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
-    toast.success('Leave Calendar');
+    //toast.success('Leave Calendar');
     // If leaveData is empty, fetch it from localStorage
     if (!leaveData || leaveData.length === 0) {
       const storedLeaveData = JSON.parse(localStorage.getItem('leaveData')) || [];

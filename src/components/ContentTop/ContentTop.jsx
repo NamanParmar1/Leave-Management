@@ -163,9 +163,7 @@ import { userInfoData } from "../../data/data";
 
 function setTitle(path){
     if(path === '/home'){
-        return 'Team Members';
-    }else if(path === '/page/2'){
-        return 'Team Members';
+        return 'Team CIGNA';
     }else if(path === '/calendar/leave'){
         return 'Leave Calendar';
     }else if(path === '/calendar/holiday'){
@@ -193,19 +191,19 @@ const ContentTop = () => {
 
 
 
-  const { authState, oktaAuth } = useOktaAuth();
-  const [userInfo, setUserInfo] = useState(null);
+//   const { authState, oktaAuth } = useOktaAuth();
+//   const [userInfo, setUserInfo] = useState(null);
   
-  useEffect(() => {
-    if (!authState || !authState.isAuthenticated) {
-        // When the user isn't authenticated, forget any user info
-        setUserInfo(userInfoData);
-      } else {
-        setUserInfo(authState.idToken.claims);
-        // Update userInfoData in data.js
-        Object.assign(userInfoData, authState.idToken.claims);
-      }
-  }, [authState, oktaAuth]); 
+//   useEffect(() => {
+//     if (!authState || !authState.isAuthenticated) {
+//         // When the user isn't authenticated, forget any user info
+//         setUserInfo(userInfoData);
+//       } else {
+//         setUserInfo(authState.idToken.claims);
+//         // Update userInfoData in data.js
+//         Object.assign(userInfoData, authState.idToken.claims);
+//       }
+//   }, [authState, oktaAuth]); 
 
 
 
@@ -217,7 +215,7 @@ const ContentTop = () => {
 
 
 
-  console.log(userInfo);
+//   console.log(userInfo);
   return (
     <>
     <div className="main-content-top">
@@ -241,7 +239,7 @@ const ContentTop = () => {
         </div>
     </div>
     <div>
-    <h3 className="content-top-title">Welcome, {userInfo?.name}</h3>  
+    <h3 className="content-top-title">Welcome, {userInfoData?.name}</h3>  
     </div>
     </>
   )
