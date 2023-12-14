@@ -1,17 +1,17 @@
 // App.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Sidebar from './layout/Sidebar/Sidebar';
 import DashboardPage from './pages/DashboardPage';
 import MembersPage from './pages/MemberPage';
-import Calender from './pages/Calender';
+import CalenderPage from './pages/CalenderPage';
 // import ApplyLeave from './pages/ApplyLeave';
 import LeaveHistory from './pages/LeaveHistory';
 import Alerts from './pages/Alerts';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { LoginCallback, Security } from '@okta/okta-react';
+import { LoginCallback, Security, useOktaAuth } from '@okta/okta-react';
 import oktaAuth from './components/OktaConfig/oktaAuth';
 import PrivateRoute from './components/PrivateRoute/privateroute';
 import LoginPage from './components/Login/LoginPage';
@@ -30,6 +30,8 @@ function App() {
     navigate(originalUri || '/home', { replace: true });
   };
   const { setLeaveData } = useLeaveContext();
+
+  
 
   useEffect(() => {
     const storedLeaveData = JSON.parse(localStorage.getItem('leaveData')) || [];
@@ -51,8 +53,8 @@ function App() {
           <Route path="/home" element={<PrivateRoute element={DashboardPage} />} />
           {/* <Route path="/page/2" element={<MembersPage/>} /> */}
           <Route path="/calendar/leave" element={<PrivateRoute element={LeaveCalendar} />} />
-          <Route path="/calendar/holiday" element={<PrivateRoute element={Calender} />} />
-          <Route path="/calendar/birthday" element={<PrivateRoute element={Calender} />} />
+          <Route path="/calendar/holiday" element={<PrivateRoute element={CalenderPage} />} />
+          <Route path="/calendar/birthday" element={<PrivateRoute element={CalenderPage} />} />
           <Route path="/applyleave" element={<PrivateRoute element={ApplyLeave} />} />
           <Route path="/leavehistory" element={<PrivateRoute element={LeaveHistory} />} />
           <Route path="/notifications" element={<PrivateRoute element={Alerts} />} />

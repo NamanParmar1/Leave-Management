@@ -1,5 +1,5 @@
 .otherleave-content {
-  margin-top: 50px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,7 +10,8 @@ form {
   color: white;
   width: 100%;
   padding: 20px;
-  background-image: url('https://wallpaperaccess.com/full/96703.jpg');
+  background-color: #1f354d;
+  /* background-image: url('https://wallpaperaccess.com/full/96703.jpg'); */
   background-repeat: no-repeat;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -47,4 +48,10 @@ select {
 
 .btn:hover {
   background-color: #2bff00;
+}
+
+.leaveduration{
+  
+  background-color: white;
+  color:rgb(0, 0, 0);
 }
