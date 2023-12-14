@@ -22,6 +22,7 @@ import leaveData from './data/LeaveData';
 import { userInfoData } from './data/data';
 import { useLeaveContext } from './context/LeaveContext';
 import { useEffect } from 'react';
+import BirthdayCalendar from './components/BirthdayCalendar/BithdayCalendar';
 
 function App() {
   console.log(userInfoData.name);
@@ -54,7 +55,7 @@ function App() {
           {/* <Route path="/page/2" element={<MembersPage/>} /> */}
           <Route path="/calendar/leave" element={<PrivateRoute element={LeaveCalendar} />} />
           <Route path="/calendar/holiday" element={<PrivateRoute element={CalenderPage} />} />
-          <Route path="/calendar/birthday" element={<PrivateRoute element={CalenderPage} />} />
+          <Route path="/calendar/birthday" element={<PrivateRoute element={BirthdayCalendar} />} />
           <Route path="/applyleave" element={<PrivateRoute element={ApplyLeave} />} />
           <Route path="/leavehistory" element={<PrivateRoute element={LeaveHistory} />} />
           <Route path="/notifications" element={<PrivateRoute element={Alerts} />} />
