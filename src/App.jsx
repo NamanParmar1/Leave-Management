@@ -17,11 +17,11 @@ import PrivateRoute from './components/PrivateRoute/privateroute';
 import LoginPage from './components/Login/LoginPage';
 // import LeaveApplication from './components/Leave/LeaveApplication';
 import ApplyLeave from './components/Leave/ApplyLeave';
-import LeaveCalendar from './components/Calendar/LeaveCalendar';
-import leaveData from './data/LeaveData';
+import LeaveCalendar from './components/Calendar/LeaveCalendar/LeaveCalendar';
 import { userInfoData } from './data/data';
 import { useLeaveContext } from './context/LeaveContext';
 import { useEffect } from 'react';
+import BirthdayCalendar from './components/Calendar/BirthdayCalendar/BithdayCalendar';
 
 function App() {
   console.log(userInfoData.name);
@@ -41,20 +41,16 @@ function App() {
   return (
     <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
 
-      <div>
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/login/callback" element={<LoginCallback />} />
-        </Routes>
-      </div>
       
       <div className="app">
         <Routes>
+        <Route path="/" element={<LoginPage />} />
+          <Route path="/login/callback" element={<LoginCallback />} />
           <Route path="/home" element={<PrivateRoute element={DashboardPage} />} />
           {/* <Route path="/page/2" element={<MembersPage/>} /> */}
           <Route path="/calendar/leave" element={<PrivateRoute element={LeaveCalendar} />} />
           <Route path="/calendar/holiday" element={<PrivateRoute element={CalenderPage} />} />
-          <Route path="/calendar/birthday" element={<PrivateRoute element={CalenderPage} />} />
+          <Route path="/calendar/birthday" element={<PrivateRoute element={BirthdayCalendar} />} />
           <Route path="/applyleave" element={<PrivateRoute element={ApplyLeave} />} />
           <Route path="/leavehistory" element={<PrivateRoute element={LeaveHistory} />} />
           <Route path="/notifications" element={<PrivateRoute element={Alerts} />} />

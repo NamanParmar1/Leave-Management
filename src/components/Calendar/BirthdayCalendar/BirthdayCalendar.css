@@ -1,0 +1,15 @@
+.calendar-content{
+    display: flex;
+    margin-right: 150px;
+    margin-left: 100px;
+    margin-top: 50px;
+    justify-content:space-between;
+}
+
+.btnsave{
+    color: white;
+}
+.cakecut{
+    color: white;
+    margin-top: 50px;
+}

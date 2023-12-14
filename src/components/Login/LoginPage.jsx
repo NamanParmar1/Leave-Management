@@ -17,15 +17,7 @@ const LoginPage = () => {
 
   let body = null;
 
-  if (false) {
-    body = (
-      <div style={{ textAlign: 'center' }}>
-        {/* <div className="Buttons">
-          <button onClick={logout}>Logout</button> */}
-        </div>
-      // </div>
-    );
-  } else {
+ 
     body = (
       <div className="cardforlogin">
         <img src={logo} className="logoofapp" alt="logo" />
@@ -35,7 +27,7 @@ const LoginPage = () => {
         </div>
       </div>
     );
-  }
+  
 
   return (
     <div>

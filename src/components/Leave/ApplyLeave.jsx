@@ -148,7 +148,7 @@ const ApplyLeave = () => {
   const [leaveDuration, setLeaveDuration] = useState('');
 
   const calculateLeaveDuration = (start, end) => {
-    const diffInMilliseconds = new Date(end) - new Date(start);
+    const diffInMilliseconds = new Date(end) - new Date(start) +1 ;
     const days = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24));
     return days;
   };
@@ -201,7 +201,7 @@ const ApplyLeave = () => {
     endDate.setHours(0, 0, 0, 0);
     currentDate.setHours(0, 0, 0, 0);
   
-    if (startDate >= endDate) {
+    if (startDate > endDate) {
       toast.error('Opps!! End date must be after the start date');
       return;
     }
