@@ -1,5 +1,3 @@
-// Calendar.jsx
-
 import React, { useEffect } from 'react';
 import './TrialCalendar.css';
 import flatpickr from 'flatpickr'; // Import the flatpickr library
@@ -24,7 +22,7 @@ const TrialCalendar = () => {
 
         const flatpickrInstance = flatpickr('#calendar .placeholder', {
             inline: true,
-            minDate: 'today',
+            minDate: null,
             showMonths: 1,
             disableMobile: true,
             onChange: function (date, str) {
@@ -63,10 +61,10 @@ const TrialCalendar = () => {
             if (flatpickrInstance.selectedDates.length) {
                 flatpickrInstance.clear();
             }
-            if (width >= 768 && flatpickrInstance.config.showMonths !== 2) {
-                flatpickrInstance.set('showMonths', 2);
+            // if (width >= 768 && flatpickrInstance.config.showMonths !== 2) {
+            //     flatpickrInstance.set('showMonths', 2);
 
-            }
+            // }
             if (width < 768 && flatpickrInstance.config.showMonths !== 1) {
                 flatpickrInstance.set('showMonths', 1);
 

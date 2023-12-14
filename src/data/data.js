@@ -64,17 +64,13 @@ export const members = [
 ];
 export const userInfoData = {};
 
-export const users = {
-    user1: {
-        name: 'Sunny Chakraborty',
-        email: 'sunny@chakraborty.com',
-        leaveData: [],
-      },
-      user2: {
-        name: 'Naman Parmar',
-        email: 'naman@parmar.com',
-        leaveData: [],
-      },
-      // Add similar entries for other users
-    };
+export const employeeDetails = [
+    { name: 'Sunny Chakraborty', color: 'red' },
+    { name: 'Naman Parmar', color: 'blue' },
+    { name: 'Harshit Raj', color: 'purple' },
+    { name: 'Maheswari Ganesan', color: 'orange' },
+    { name: 'Munirahul Desetty', color: 'violet' },
+    { name: 'Swathi Malineni', color: 'pink' },
+    
+  ];
   

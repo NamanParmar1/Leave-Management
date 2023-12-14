@@ -65,10 +65,6 @@
     font-size: 16px;
   }
   
-  #calendar .flatpickr-months .flatpickr-month .flatpickr-current-month .numInputWrapper {
-    /* display: none; */
-  }
-  
   #calendar .flatpickr-months .flatpickr-prev-month,
   #calendar .flatpickr-months .flatpickr-next-month {
     top: calc(50% - 23px);

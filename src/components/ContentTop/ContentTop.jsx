@@ -163,7 +163,7 @@ import { userInfoData } from "../../data/data";
 
 function setTitle(path){
     if(path === '/home'){
-        return 'Team CIGNA';
+        return 'Dashboard';
     }else if(path === '/calendar/leave'){
         return 'Leave Calendar';
     }else if(path === '/calendar/holiday'){
@@ -215,7 +215,7 @@ const ContentTop = () => {
 
 
 
-//   console.log(userInfo);
+console.log(userInfoData);
   return (
     <>
     <div className="main-content-top">
@@ -239,7 +239,7 @@ const ContentTop = () => {
         </div>
     </div>
     <div>
-    <h3 className="content-top-title">Welcome, {userInfoData?.name}</h3>  
+    <h3 className="content-top-title">Welcome, Team CIGNA</h3>  
     </div>
     </>
   )
