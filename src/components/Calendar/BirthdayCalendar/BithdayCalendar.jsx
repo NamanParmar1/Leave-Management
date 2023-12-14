@@ -3,9 +3,11 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import './BirthdayCalendar.css';
 
+import Sidebar from "../../../layout/Sidebar/Sidebar"
 
-import Sidebar from "../../layout/Sidebar/Sidebar";
-import ContentTop from "../ContentTop/ContentTop";
+import ContentTop from "../../ContentTop/ContentTop"
+
+
 
 const BirthdayCalendar = () => {
   const [date, setDate] = useState(new Date());

@@ -22,7 +22,7 @@ import leaveData from './data/LeaveData';
 import { userInfoData } from './data/data';
 import { useLeaveContext } from './context/LeaveContext';
 import { useEffect } from 'react';
-import BirthdayCalendar from './components/BirthdayCalendar/BithdayCalendar';
+import BirthdayCalendar from './components/Calendar/BirthdayCalendar/BithdayCalendar';
 
 function App() {
   console.log(userInfoData.name);

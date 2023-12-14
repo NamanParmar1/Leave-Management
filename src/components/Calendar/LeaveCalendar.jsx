@@ -398,7 +398,7 @@ const LeaveCalendar = () => {
 
     return (
       <div className="modal-content">
-        <h3>Leave Details</h3>
+        <h3 style={{marginBottom:'10px'}}>Leave Details</h3>
         {leaveDetailsForDate.map((leave) => (
           <div key={leave.id} className="leave-box">
             <p className="employee-name" style={{ color: employeeDetailsMap.get(leave.Name) }}>
