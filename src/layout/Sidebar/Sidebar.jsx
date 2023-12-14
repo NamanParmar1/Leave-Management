@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { personsImgs, iconsImgs } from '../../utils/images';
-import { navigationLinks } from '../../data/data';
+import { navigationLinks, userInfoData } from '../../data/data';
 import './Sidebar.css';
 import { useContext } from 'react';
 import { SidebarContext } from '../../context/sidebarContext';
@@ -16,15 +16,19 @@ const Sidebar = () => {
   //const [isCalendarMenuOpen, setCalendarMenuOpen] = useState(pathname.startsWith('/calendar')? true:false);
   const [calendarMenuClass, setCalendarMenuClass] = useState('');
   const [sidebarClass, setSidebarClass] = useState('');
+  // const [name, setName] = useState(userInfoData?.name);
   const { isSidebarOpen } = useContext(SidebarContext);
   const navigate = useNavigate();
 
 const { oktaAuth } = useOktaAuth();
 
 const handleLogout = async () => {
+  localStorage.removeItem('hasToastShown');
   await oktaAuth.signOut()
 };
-
+  // useEffect(() => {
+  //   setName(userInfoData?.name)
+  // }, [userInfoData]);
 
   useEffect(() => {
     if (pathname.startsWith('/calendar')) {
@@ -58,7 +62,7 @@ const handleLogout = async () => {
         <div className="info-img img-fit-cover">
           <img src={personsImgs.person_one} alt="profile" />
         </div>
-        <span className="info-name">TimeOff</span>
+        <span className="info-name">{userInfoData?.name}</span>
       </div>
 
       <nav className="navigation">

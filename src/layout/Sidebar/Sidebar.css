@@ -19,7 +19,7 @@
 }
 
 .info-img {
-  width: 48px;
+  width: 58px;
   height: 48px;
   overflow: hidden;
   overflow: hidden;
@@ -30,7 +30,7 @@
 .info-name {
   font-size: 20px;
   color: var(--clr-white);
-  /* text-transform: uppercase; */
+   text-transform: uppercase; 
 }
 
 .navigation {
@@ -54,7 +54,7 @@
 }
 
 .sidebar-change {
-  margin-left: -200px;
+  margin-left: -230px;
 }
 
 .nav-item {
