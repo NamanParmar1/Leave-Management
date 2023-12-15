@@ -343,14 +343,33 @@ import './HighlightedLeaves.css';
 import { useLeaveContext } from '../../../context/LeaveContext';
 import ContentTop from '../../ContentTop/ContentTop';
 import { employeeDetails } from '../../../data/data';
+import firebaseApp from '../../../Firebase/Firebase';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 Modal.setAppElement('#root'); 
 
 const LeaveCalendar = () => {
-  const { leaveData } = useLeaveContext();
+  const { leaveData, setLeaveData } = useLeaveContext();
   const [selectedDate, setSelectedDate] = useState(null);
 
   const employeeDetailsMap = new Map(employeeDetails.map(({ name, color }) => [name, color]));
+
+  useEffect(() => {
+    const database = getDatabase(firebaseApp);
+    const leaveRef = ref(database, 'leave');
+
+    // Listen for changes in the "leave" node
+    const unsubscribe = onValue(leaveRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const leaveArray = Object.values(data);
+        setLeaveData(leaveArray);
+      }
+    });
+
+    // Cleanup the subscription when the component unmounts
+    return () => unsubscribe();
+  }, [setLeaveData]);
 
   const getHighlightedDates = () => {
     const highlightedDates = [];
@@ -373,7 +392,6 @@ const LeaveCalendar = () => {
 
     return highlightedDates;
   };
-
 
   const getLeaveDetailsForDate = () => {
     if (!selectedDate) {
