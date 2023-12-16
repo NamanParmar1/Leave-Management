@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useState } from 'react';
 import { useParams, BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import './App.css';
+
 import Sidebar from './layout/Sidebar/Sidebar';
 import DashboardPage from './pages/DashboardPage';
 import MembersPage from './pages/MemberPage';
@@ -11,6 +11,7 @@ import LeaveHistory from './pages/LeaveHistory';
 import Alerts from './pages/Alerts';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 import { LoginCallback, Security, useOktaAuth } from '@okta/okta-react';
 import oktaAuth from './components/OktaConfig/oktaAuth';
 import PrivateRoute from './components/PrivateRoute/privateroute';
