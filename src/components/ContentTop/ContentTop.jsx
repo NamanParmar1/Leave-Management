@@ -215,7 +215,7 @@ const ContentTop = () => {
 
 
 
-console.log(userInfoData);
+// console.log(userInfoData);
   return (
     <>
     <div className="main-content-top">

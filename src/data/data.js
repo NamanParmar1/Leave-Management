@@ -47,7 +47,7 @@ export const members = [
         designation: "Programmer Analyst Trainee-GE",
         team: "ADM AVM HC Delivery",
         location: "Technocomplex (TCX) STPI",
-        birthday:"2024-12-17"
+        birthday:"2024-12-18"
     },
     {
         id: 11,
@@ -363,7 +363,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Christmas",
-      date: "2023-12-25",
+      date: "2023-12-17",
       day: "Monday",
       locations: {
         Chennai: "RH",

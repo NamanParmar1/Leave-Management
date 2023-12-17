@@ -33,14 +33,15 @@ const DashboardPage = () => {
 
     if (!hasToastShown) {
       const today = new Date();
-      const formattedToday = today.toISOString().split('T')[0]; // Format: 'YYYY-MM-DD'
+      const formattedToday = today.toISOString().split('T')[0].substring(5);
+       // Format: 'YYYY-MM-DD'
 
       const todayHolidays = holidays.filter(
-        (holiday) => holiday.date === formattedToday
+        (holiday) => holiday.date.substring(5) === formattedToday
       );
 
       const todayBirthdays = members.filter(
-        (member) => member.birthday === formattedToday
+        (member) => member.birthday.substring(5) === formattedToday
       );
 
       if (todayHolidays.length > 0 || todayBirthdays.length > 0) {
@@ -57,7 +58,7 @@ const DashboardPage = () => {
                 {!hasBirthdayToastShown && (
                   <p className='toast-username'>Welcome, {userInfoData?.name}!</p>
                 )}
-                <p>Holidays:</p>
+                {/* <p>Holidays:</p> */}
                 <ul>
                   {todayHolidays.map((holiday, index) => (
                     <li key={index}>{`Merry ${holiday.holidayDescription}`}</li>
@@ -88,7 +89,7 @@ const DashboardPage = () => {
                 {!hasHolidayToastShown && (
                   <p className='toast-username'>Welcome, {userInfoData?.name}!</p>
                 )}
-                <p>Birthdays:</p>
+                {/* <p>Birthdays:</p> */}
                 <ul>
                   {todayBirthdays.map((birthday, index) => (
                     <li key={index}>{`Happy Birthday, ${(birthday.title.split(',')[1] || '').trim().split(' ')[0] || ''}!`}</li>
