@@ -187,4 +187,21 @@
     font-weight: 800;
     letter-spacing: -0.8px;
   }
+
+
+  #calendar .flatpickr-day.holiday {
+    /* background-color: #FFC0CB; 
+    
+    color: #FF1493;  */
+    border-radius: 50%;
+    background-image: url(../../assets/images/dateback.gif);
+    background-size: contain;
+    border: 1px solid #6da9b0;
+    background-color: black;
+  }
+  
+  #calendar .flatpickr-day.holiday:hover {
+    background-color: #FF1493; 
+    color: #FFF; 
+  }
   

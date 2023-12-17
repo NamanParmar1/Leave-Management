@@ -85,7 +85,7 @@ export const employeeDetails = [
   export const holidays = [
     {
       holidayDescription: "New Year",
-      date: "2023-01-01",
+      date: "2024-01-01",
       day: "Sunday",
       locations: {
         Chennai: "NH",
@@ -103,7 +103,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Pongal ( Makar Sankrati )",
-      date: "2023-01-15",
+      date: "2024-01-15",
       day: "Sunday",
       locations: {
         Chennai: "NH",
@@ -114,7 +114,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Nethaji Birthday",
-      date: "2023-01-23",
+      date: "2024-01-23",
       day: "Monday",
       locations: {
         Gurgaon: "RH"
@@ -122,7 +122,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Republic Day",
-      date: "2023-01-26",
+      date: "2024-01-26",
       day: "Thursday",
       locations: {
         Chennai: "NH",
@@ -141,7 +141,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Holi",
-      date: "2023-03-07",
+      date: "2024-03-07",
       day: "Tuesday",
       locations: {
         Gurgaon: "RH",
@@ -152,7 +152,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Ugadi / Gudhi Padwa",
-      date: "2023-03-22",
+      date: "2024-03-22",
       day: "Wednesday",
       locations: {
         Bengaluru: "RH",
@@ -164,7 +164,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Good Friday",
-      date: "2023-04-07",
+      date: "2024-04-07",
       day: "Friday",
       locations: {
         Noida: "RH"
@@ -172,7 +172,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Tamil New year",
-      date: "2023-04-14",
+      date: "2024-04-14",
       day: "Friday",
       locations: {
         Chennai: "RH",
@@ -181,7 +181,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Ramzan ( Id - ul - Fitr )",
-      date: "2023-04-21",
+      date: "2024-04-21",
       day: "Friday",
       locations: {
         Chennai: "RH",
@@ -200,7 +200,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "May Day",
-      date: "2023-05-01",
+      date: "2024-05-01",
       day: "Monday",
       locations: {
         Chennai: "NH",
@@ -219,7 +219,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Telangana Formation Day",
-      date: "2023-06-02",
+      date: "2024-06-02",
       day: "Friday",
       locations: {
         Hyderabad: "RH"
@@ -227,7 +227,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Independence Day",
-      date: "2023-08-15",
+      date: "2024-08-15",
       day: "Tuesday",
       locations: {
         Chennai: "NH",
@@ -243,7 +243,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "First Onam",
-      date: "2023-08-28",
+      date: "2024-08-28",
       day: "Monday",
       locations: {
         Kochi: "RH"
@@ -251,7 +251,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Thiruvonam",
-      date: "2023-08-29",
+      date: "2024-08-29",
       day: "Tuesday",
       locations: {
         Chennai: "RH",
@@ -262,7 +262,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Ganesh Chaturthi",
-      date: "2023-09-18",
+      date: "2024-09-18",
       day: "Monday",
       locations: {
         Bengaluru: "RH",
@@ -273,7 +273,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Gandhi Jayanti",
-      date: "2023-10-02",
+      date: "2024-10-02",
       day: "Monday",
       locations: {
         Chennai: "NH",
@@ -292,7 +292,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Astami ( Durga Puja )",
-      date: "2023-10-22",
+      date: "2024-10-22",
       day: "Sunday",
       locations: {
         Kolkata: "NH"
@@ -300,7 +300,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Mahanavami ( Durga Puja )",
-      date: "2023-10-23",
+      date: "2024-10-23",
       day: "Monday",
       locations: {
         Gurgaon: "RH"
@@ -308,7 +308,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Dussehra ( Vijaya Dashami )",
-      date: "2023-10-24",
+      date: "2024-10-24",
       day: "Tuesday",
       locations: {
         Chennai: "RH",
@@ -327,7 +327,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Kannada Rajyotsav",
-      date: "2023-11-01",
+      date: "2024-11-01",
       day: "Wednesday",
       locations: {
         Bengaluru: "RH",
@@ -336,7 +336,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Diwali / Kali Puja",
-      date: "2023-11-12",
+      date: "2024-11-12",
       day: "Sunday",
       locations: {
         Kolkata: "NH"
@@ -344,7 +344,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Post Deepavali",
-      date: "2023-11-13",
+      date: "2024-11-13",
       day: "Monday",
       locations: {
         Chennai: "RH",
@@ -363,7 +363,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Christmas",
-      date: "2023-12-16",
+      date: "2023-12-25",
       day: "Monday",
       locations: {
         Chennai: "RH",
