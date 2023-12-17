@@ -102,11 +102,19 @@ const TrialCalendar = () => {
                         return holidayDate === dateStr.substring(5); // Compare day and month without considering the year
                     });
                 
-                    const contents = holidayInfo.map((info) => (
-                        `<div class="event"><div class="date">${instance.formatDate(selectedDates[0], 'l, J F Y')}</div><div class="location">${info.holidayDescription}</div></div>`
-                    )).join('');
+                    let contents;
+                    if (holidayInfo.length > 0) {
+                        // Display holiday information
+                        contents = holidayInfo.map((info) => (
+                            `<div class="event"><div class="date">${instance.formatDate(selectedDates[0], 'l, J F')}</div><div class="location">${info.holidayDescription}</div></div>`
+                        )).join('');
+                    } else {
+                        // Display only the date if no holidays are found
+                        contents = `<div class="event"><div class="date">${instance.formatDate(selectedDates[0], 'l, J F')}</div></div>`;
+                    }
                 
                     document.querySelector('#calendar .calendar-events').innerHTML = contents;
+                    //console.log(selectedDates);
                 },
                 onMonthChange: function (selectedDates, dateStr, instance) {
                     // Highlight holidays on the calendar when changing months
@@ -116,20 +124,20 @@ const TrialCalendar = () => {
                     // Highlight holidays on the calendar when changing years
                     highlightHolidays(instance);
                 },
-                locale: {
-                    weekdays: {
-                        shorthand: ["S", "M", "T", "W", "T", "F", "S"],
-                        longhand: [
-                            "Sunday",
-                            "Monday",
-                            "Tuesday",
-                            "Wednesday",
-                            "Thursday",
-                            "Friday",
-                            "Saturday",
-                        ],
-                    },
-                },
+                // locale: {
+                //     weekdays: {
+                //         shorthand: ["S", "M", "T", "W", "T", "F", "S"],
+                //         longhand: [
+                //             "Sunday",
+                //             "Monday",
+                //             "Tuesday",
+                //             "Wednesday",
+                //             "Thursday",
+                //             "Friday",
+                //             "Saturday",
+                //         ],
+                //     },
+                // },
             });
 
             eventCaledarResize(window);
@@ -186,7 +194,7 @@ const TrialCalendar = () => {
         let y = date.getFullYear();
         return `${y}-${(m <= 9 ? '0' + m : m)}-${(d <= 9 ? '0' + d : d)}`;
     }
-    console.log(location.pathname)
+    
 
     let title = '';
     if (location.pathname === '/calendar/holiday') {
@@ -200,7 +208,7 @@ const TrialCalendar = () => {
     return (
         <div className="cal-modal-container">
             <div className="cal-modal">
-                {/* <h3>{title}</h3> */}
+                 <h3>{title}</h3> 
                 <div id="calendar">
                     <div className="placeholder"></div>
                     <div className="calendar-events"></div>
