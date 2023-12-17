@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import './TrialCalendar.css';
+
 import flatpickr from 'flatpickr'; // Import the flatpickr library
 import 'flatpickr/dist/flatpickr.min.css'; // Import the flatpickr styles
 import { useLocation } from 'react-router-dom';
 import { holidays } from '../../data/data';
+import './TrialCalendar.css';
 
 const TrialCalendar = () => {
     const location = useLocation();

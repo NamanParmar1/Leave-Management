@@ -150,6 +150,13 @@
     background: #37A628;
     color: #fff;
   }
+
+  .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+    background-color: #292929;
+    color: #fff;
+    outline: none;
+    padding: 0;
+}
   
   #calendar .flatpickr-day.nextMonthDay,
   #calendar .flatpickr-day.prevMonthDay {
