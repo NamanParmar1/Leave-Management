@@ -6,8 +6,8 @@ export const navigationLinks = [
     // { id: 2, title: 'Members', image: iconsImgs.budget },
     { id: 3, page: "/calendar", title: 'Calendar', image: iconsImgs.calender },
     { id: 4, page: "/applyleave", title: 'Apply Leave', image: iconsImgs.applyleave },
-    { id: 5, page: "/leavehistory", title: 'Leave History', image: iconsImgs.history },
-    { id: 6, page: "/notifications", title: 'Notifications', image: iconsImgs.bell }
+    { id: 5, page: "/leavehistory", title: 'Leave History', image: iconsImgs.history }
+    // { id: 6, page: "/notifications", title: 'Notifications', image: iconsImgs.bell }
     // { id: 7, title: 'Account', image: iconsImgs.user },
     // { id: 8, title: 'Settings', image: iconsImgs.gears }
 ];
@@ -29,7 +29,7 @@ export const members = [
         designation: "Programmer Analyst Trainee-GE",
         team: "ADM AVM HC Delivery",
         location: "Technocomplex (TCX) STPI",
-        birthday:"2024-12-16"
+        birthday:"2023-12-17"
     },
     {
         id: 9,
@@ -47,7 +47,7 @@ export const members = [
         designation: "Programmer Analyst Trainee-GE",
         team: "ADM AVM HC Delivery",
         location: "Technocomplex (TCX) STPI",
-        birthday:"2024-12-15"
+        birthday:"2024-12-17"
     },
     {
         id: 11,
