@@ -7,6 +7,11 @@ import './LoginPage.css';
 const LoginPage = () => {
   const { oktaAuth, authState } = useOktaAuth();
 
+  
+  if(localStorage.getItem('hasToastShown')){
+    localStorage.removeItem('hasToastShown');
+  }
+  
   const login = async () => {
     await oktaAuth.signInWithRedirect();
   };

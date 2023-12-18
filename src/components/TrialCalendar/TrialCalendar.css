@@ -150,6 +150,13 @@
     background: #37A628;
     color: #fff;
   }
+
+  .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+    background-color: #292929;
+    color: #fff;
+    outline: none;
+    padding: 0;
+}
   
   #calendar .flatpickr-day.nextMonthDay,
   #calendar .flatpickr-day.prevMonthDay {
@@ -186,5 +193,22 @@
     color: #3DAE2B;
     font-weight: 800;
     letter-spacing: -0.8px;
+  }
+
+
+  #calendar .flatpickr-day.holiday {
+    /* background-color: #FFC0CB; 
+    
+    color: #FF1493;  */
+    border-radius: 50%;
+    background-image: url(../../assets/images/dateback.gif);
+    background-size: contain;
+    border: 1px solid #6da9b0;
+    background-color: black;
+  }
+  
+  #calendar .flatpickr-day.holiday:hover {
+    background-color: #FF1493; 
+    color: #FFF; 
   }
   

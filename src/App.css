@@ -109,3 +109,14 @@ button {
     font-size: 14px !important;
   }
 }
+
+.Toastify__toast-theme--light {
+  background: #292929;
+  color: antiquewhite;
+  /* background-image: url(./assets/images/planeanimation.gif); */
+}
+
+.Toastify__close-button--light {
+  color: antiquewhite;
+  opacity: 0.8;
+}

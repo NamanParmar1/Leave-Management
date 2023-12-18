@@ -1,34 +1,72 @@
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 16px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 16px;
+}
 
-  .card-wrapper {
-    width: 440px; /* Set the desired width for your cards */
-    margin: 14px;
-  }
+.card-wrapper {
+  width: 440px;
+  /* Set the desired width for your cards */
+  margin: 14px;
+}
 
+.main-content {
+
+  background-color: #292929;
+  flex: 1;
+  padding: 32px;
+}
+
+@media screen and (max-width: 1400px) {
   .main-content {
-    
-    background-color: #292929;
-    flex: 1;
-    padding: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  @media screen and (max-width: 1400px) {
-    .main-content {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    
-  }
-  
+}
 
-  @media screen and (max-width: 1200px) {
-    .main-content {
-      padding-right: 16px;
-      padding-left: 16px;
-    }
+
+@media screen and (max-width: 1200px) {
+  .main-content {
+    padding-right: 16px;
+    padding-left: 16px;
   }
+}
+
+.toast-content{
+  display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: 19px;
+
+}
+
+.toast-icon{
+  display: flex;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+}
+.icon{
+  width: inherit;
+}
+
+.toast-username{
+  margin-bottom: 10px;
+}
+
+
+
+.toast-message {
+  background: transparent;
+  /* color: #fff; */
+  font-size: 20px;
+  width: 34vw;
+  padding: 30px 20px;
+}
+
+.Toastify__toast-theme--light {
+  background: #292929;
+  color: antiquewhite;
+}
