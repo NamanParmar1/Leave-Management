@@ -654,6 +654,8 @@ const LeaveCalendar = () => {
     return () => unsubscribe();
   }, [setLeaveData]);
 
+  
+
   const isAdmin = oktaUserEmail.endsWith('@cigna.com');
 
   const getHighlightedDates = () => {

@@ -11,6 +11,9 @@ const LoginPage = () => {
   if(localStorage.getItem('hasToastShown')){
     localStorage.removeItem('hasToastShown');
   }
+  if(localStorage.getItem('hasLeaveToastShown')){
+    localStorage.removeItem('hasLeaveToastShown');
+  }
   
   const login = async () => {
     await oktaAuth.signInWithRedirect();
