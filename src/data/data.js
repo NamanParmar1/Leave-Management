@@ -65,7 +65,7 @@ export const members = [
         designation: "Software Engineer",
         team: "ADM AVM HC Delivery",
         location: "Madhapur Bld 12A (MDH) SEZ",
-        birthday:"2024-12-16"
+        birthday:"2024-12-19"
     }
 ];
 export const userInfoData = {};
@@ -363,7 +363,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Christmas",
-      date: "2023-12-17",
+      date: "2023-12-19",
       day: "Monday",
       locations: {
         Chennai: "RH",

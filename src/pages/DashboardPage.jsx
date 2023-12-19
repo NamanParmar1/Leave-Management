@@ -20,6 +20,7 @@ const DashboardPage = () => {
   const { authState, oktaAuth } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
   const { leaveData, setLeaveData } = useLeaveContext();
+  const [toastCount, setToastCount] = useState(0);
 
 
 
@@ -101,6 +102,7 @@ const DashboardPage = () => {
 
           if (today < startDate) {
             // Show toast 2 days prior to leave start
+            setToastCount((prevCount) => prevCount + 1);
             toast(
               <div className="toast-content">
                 <div className='toast-icon'>
@@ -120,10 +122,12 @@ const DashboardPage = () => {
                 closeOnClick: false,
                 pauseOnHover: true,
                 draggable: true,
+                onClose: () => setToastCount((prevCount) => prevCount - 1),
               }
             );
           } else {
             // Show toast during leave period
+            setToastCount((prevCount) => prevCount + 1);
             toast(
               <div className="toast-content">
                 <div className='toast-icon'>
@@ -143,6 +147,7 @@ const DashboardPage = () => {
                 closeOnClick: false,
                 pauseOnHover: true,
                 draggable: true,
+                onClose: () => setToastCount((prevCount) => prevCount - 1),
               }
             );
           }
@@ -160,9 +165,10 @@ const DashboardPage = () => {
     const hasToastShown = localStorage.getItem('hasToastShown');
 
     if (!hasToastShown) {
+      //setToastCount(0);
       const today = new Date();
-      const todayDate = today.toISOString().split('T')[0];
-      const formattedToday = todayDate.substring(5);
+      const formattedToday = today.toISOString().split('T')[0].substring(5);
+      // Format: 'YYYY-MM-DD'
 
       const todayHolidays = holidays.filter(
         (holiday) => holiday.date.substring(5) === formattedToday
@@ -175,11 +181,8 @@ const DashboardPage = () => {
       let hasBirthdayToastShown = false;
 
       if (todayHolidays.length > 0 || todayBirthdays.length > 0) {
-        // let hasHolidayToastShown = false;
-        // let hasBirthdayToastShown = false;
-        // let hasLeaveToastShown = false;
-
         if (todayHolidays.length > 0 && !hasHolidayToastShown) {
+          setToastCount((prevCount) => prevCount + 1);
           toast(
             <div className="toast-content">
               <div className='toast-icon'>
@@ -205,12 +208,14 @@ const DashboardPage = () => {
               closeOnClick: false,
               pauseOnHover: true,
               draggable: true,
+              onClose: () => setToastCount((prevCount) => prevCount - 1),
             }
           );
           hasHolidayToastShown = true;
         }
 
         if (todayBirthdays.length > 0 && !hasBirthdayToastShown) {
+          setToastCount((prevCount) => prevCount + 1);
           toast(
             <div className="toast-content">
               <div className='toast-icon'>
@@ -222,8 +227,12 @@ const DashboardPage = () => {
                 )}
                 {/* <p>Birthdays:</p> */}
                 <ul>
+                  {/* {console.log("logged in user: ", userInfoData?.name?.split(' ')[0])} */}
+                  {/* {console.log("birthday user: ", ((birthday.title.split(',')[1] || '').trim().split(' ')[0] || ''))} */}
                   {todayBirthdays.map((birthday, index) => (
-                    <li key={index}>{`Happy Birthday, ${(birthday.title.split(',')[1] || '').trim().split(' ')[0] || ''}!`}</li>
+                    <li key={index}>{((birthday.title.split(',')[1] || '').trim().split(' ')[0] || '') === (userInfoData?.name?.split(' ')[0]) ?
+
+                      `Happy Birthday, ${userInfoData?.name?.split(' ')[0]}! 🎉🎉` : `Today is ${(birthday.title.split(',')[1] || '').trim().split(' ')[0] || ''}'s Birthday! 🎉🎉`}</li>
                   ))}
                 </ul>
               </div>
@@ -236,12 +245,16 @@ const DashboardPage = () => {
               closeOnClick: false,
               pauseOnHover: true,
               draggable: true,
+              onClose: () => setToastCount((prevCount) => prevCount - 1),
             }
           );
           hasBirthdayToastShown = true;
         }
+
+        //localStorage.setItem('hasToastShown', 'true');
       }
       if (!hasBirthdayToastShown && !hasHolidayToastShown) {
+        setToastCount((prevCount) => prevCount + 1);
         toast(
           <div className="toast-content">
             <div className='toast-icon'>
@@ -260,16 +273,20 @@ const DashboardPage = () => {
             closeOnClick: false,
             pauseOnHover: true,
             draggable: true,
+            onClose: () => setToastCount((prevCount) => prevCount - 1),
           }
         );
       }
 
       localStorage.setItem('hasToastShown', 'true');
+
     }
-  }, [userInfoData, leaveData]);
 
+  }, [userInfoData]);
 
-
+  const handleToastClose = () => {
+    setIsToastVisible(false);
+  };
 
 
   const handleCardClick = (member) => {
@@ -283,7 +300,7 @@ const DashboardPage = () => {
   return (
     <>
       <Sidebar />
-      <div className='main-content'>
+      <div className={`main-content ${toastCount > 0 ? 'blurred' : ''}`}>
         <ContentTop />
         <div className='card-container'>
           {members.map((member) => (
@@ -296,14 +313,8 @@ const DashboardPage = () => {
             </div>
           ))}
         </div>
-
-
-        {/* {selectedMember && (
-        <MemberDetails member={selectedMember} onClose={handleCloseDetails} />
-      )} */}
       </div>
     </>
   );
 };
-
 export default DashboardPage;
