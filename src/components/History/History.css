@@ -1,0 +1,28 @@
+.history-contents {
+    color: white;
+  }
+  
+  .history-heading {
+    margin-top:50px ;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Style for the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th {
+    background-color: #333;
+    color: white;
+    padding: 8px;
+  }
+  
+  table td {
+    border: 1px solid #333;
+    padding: 8px;
+  }
+  

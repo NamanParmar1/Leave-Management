@@ -2,7 +2,7 @@ import React from 'react';
 // import "../layout/Content/Content.css";
 import ContentTop from '../components/ContentTop/ContentTop';
 import Sidebar from '../layout/Sidebar/Sidebar';
-
+import History from '../components/History/History';
 
 const LeaveHistory = () => {
   return (
@@ -10,7 +10,7 @@ const LeaveHistory = () => {
     <Sidebar/>
     <div className='main-content'>
       <ContentTop/>
-      {/* Add content specific to the Dashboard page */}
+      <History/>
     </div>
     </>
   );
