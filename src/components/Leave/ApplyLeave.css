@@ -1,57 +1,184 @@
-.otherleave-content {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+/* ApplyLeave Form Styling here */
 
-form {
-  max-width: 400px;
-  color: white;
-  width: 100%;
+.main-content {
   padding: 20px;
-  background-color: #1f354d;
-  /* background-image: url('https://wallpaperaccess.com/full/96703.jpg'); */
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto; /* Adjust the margin for spacing between forms */
+}
+
+.otherleave-content {
+  /* align-content: center; */
   display: flex;
   flex-direction: column;
+  /* max-width: 850px; */
+  margin-top: 50px;
+  /* margin-left: 50px; */
+  margin-right: 50px;
+  padding-left: 80px;
+  color: antiquewhite;
 }
 
-label.apply-leave {
-  display: block;
-  margin-bottom: 8px;
-  color: #0056b3; /* Change the color of the titles */
+
+.third-line {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 55px; */
+}
+.second-line {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 55px;*/
+} 
+.first-line {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 55px;*/
+} 
+select option {
+  margin: 40px;
+  background-color:#292929;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+::-webkit-datetime-edit{
+  background-color: #292929;
+  color: antiquewhite;
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+mark {
+  font-family: 'Inter', sans-serif;
+  background: var(--color-accent);
+  color: var(--color-text);
+  font-weight: bold;
+  padding: 0 0.2em;
+}
+
+.card {
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  /* background: var(--color-background); */
+  background: transparent;
+  padding: 2rem;
+  margin-top: 1rem;
   border-radius: 4px;
+  width: -webkit-fill-available;
+  line-height: 1.4;
+  color: white;
+  
 }
+
+
+
+.card *:first-child {
+  font-weight: 300;
+  margin-top: 0;
+}
+
+
+.input {
+  font-weight: 300;
+  position: relative;
+  font-size: medium;
+}
+
+
+.input__field {
+  font-weight: 300;
+    line-height: 1.4;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-bottom: 3px solid currentColor;
+    padding: 0.75rem 0.5rem;
+    color: antiquewhite;
+    background: transparent;
+    border-radius: 4px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+.btn-wrap{
+  margin-top: 15px;
+  align-items: center;
+  display: flex;
+}
+
 
 .btn {
-  background-color: #baf8e7;
-  color: #080808;
-  padding: 12px 20px;
-  border: none;
+  line-height: 1.4;
+  color: antiquewhite;
+  padding: 0.5rem 1rem;
+  /* background: border-box; */
+  border: 3px solid antiquewhite;
   border-radius: 4px;
+  font-weight: 900;
+}
+
+.btn:hover{
+  background-color: antiquewhite;
+  color: black;
+}
+
+/* Modal Styling from here */
+
+.confirmation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation-modal {
+  background: #292929;
+  color: red;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.button-container button {
+  margin: 0 10px;
+  padding: 8px 16px;
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #2bff00;
+.proceedButton,.cancelButton,.sure{
+  color: whitesmoke;
 }
 
-.leaveduration{
+.proceedButton:hover{
   
-  background-color: white;
-  color:rgb(0, 0, 0);
+  background:green;
+}
+
+.cancelButton:hover{
+  background: red;
 }

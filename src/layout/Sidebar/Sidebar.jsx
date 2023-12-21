@@ -24,6 +24,7 @@ const { oktaAuth } = useOktaAuth();
 
 const handleLogout = async () => {
   localStorage.removeItem('hasToastShown');
+  localStorage.removeItem('hasLeaveToastShown');
   await oktaAuth.signOut()
 };
   // useEffect(() => {

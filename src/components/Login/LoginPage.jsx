@@ -11,6 +11,9 @@ const LoginPage = () => {
   if(localStorage.getItem('hasToastShown')){
     localStorage.removeItem('hasToastShown');
   }
+  if(localStorage.getItem('hasLeaveToastShown')){
+    localStorage.removeItem('hasLeaveToastShown');
+  }
   
   const login = async () => {
     await oktaAuth.signInWithRedirect();
@@ -36,10 +39,8 @@ const LoginPage = () => {
 
   return (
     <div>
-      <header>
-      <body className="login-page">
+      <header className="login-page">
         {body}
-      </body>
       </header>
     </div>
   );
