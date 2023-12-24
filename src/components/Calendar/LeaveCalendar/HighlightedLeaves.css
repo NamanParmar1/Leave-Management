@@ -101,7 +101,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: aliceblue;
+/*   color: aliceblue; */
   position: relative;
 }
 .react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
