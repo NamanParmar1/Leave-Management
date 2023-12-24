@@ -48,7 +48,7 @@ const DashboardPage = () => {
       if (data) {
         const leaveArray = Object.values(data);
         setLeaveData(leaveArray);
-        //handleLeaveToast(leaveArray);
+        handleLeaveToast(leaveArray);
       }
     });
 
@@ -107,10 +107,10 @@ const DashboardPage = () => {
               <div className="toast-content">
                 <div className='toast-icon'>
                   {/* Use a suitable leave-related icon here */}
-                  <img src={leaveIcon} alt="Leave Icon" className="icon" />
+                  <img src={bellGif} alt="Leave Icon" className="icon" />
                 </div>
                 <div>
-                  <p className='toast-username'>{`${leave.Name} will be on leave!   From: ${leaveStartDateFormatted} To: ${leaveEndDateFormatted}  due to ${leave.reason}`}</p>
+                  <p className='toast-username'>{`${leave.Name} will be on ${leave.leaveType} leave!   From: ${leaveStartDateFormatted} To: ${leaveEndDateFormatted}  due to ${leave.reason}`}</p>
                   {/* <p>{`From: ${leaveStartDateFormatted} To: ${leaveEndDateFormatted}`}</p> */}
                 </div>
               </div>,
@@ -132,10 +132,10 @@ const DashboardPage = () => {
               <div className="toast-content">
                 <div className='toast-icon'>
                   {/* Use a suitable leave-related icon here */}
-                  <img src={leaveIcon} alt="Leave Icon" className="icon" />
+                  <img src={bellGif} alt="Leave Icon" className="icon" />
                 </div>
                 <div>
-                  <p className='toast-username'>{leave.Name} is on leave!</p>
+                  <p className='toast-username'>{leave.Name} is on {leave.leaveType} leave!</p>
                   <p>{`From: ${leaveStartDateFormatted} To: ${leaveEndDateFormatted}`}</p>
                 </div>
               </div>,

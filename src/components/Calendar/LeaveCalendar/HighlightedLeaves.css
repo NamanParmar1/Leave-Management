@@ -52,18 +52,88 @@
   height: 10px;
 }
 
-/* .react-calendar{
+.react-calendar{
+  width: 450px;
+  margin-top: 10px;
+  padding-bottom: 10px;
   background: #292929;
+  border-bottom: 2px solid aliceblue;
+  font-family: "Bai Jamjuree", sans-serif;
+  border-radius: 10px;
+  border-top: 2px solid aliceblue;
+  border-left: none;
+  border-right: none;
 }
 .react-calendar__tile--now {
   background: #343432;
 }
+.react-calendar__month-view__weekdays__weekday{
+  color: aliceblue;
+}
 
-.react-calendar__tile_react-calendar__month-view__days__day_react-calendar__month-view__days__day--neighboringMonth
+.react-calendar__tile.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+  display: flex;
+}
+
+.react-calendar__tile.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+  display: flex;
+}
+.react-calendar__tile.react-calendar__month-view__days__day{
+  color: aliceblue;
+  display: flex;
+}
+
+/* .react-calendar__tile_react-calendar__month-view__days__day_react-calendar__month-view__days__day--neighboringMonth
 {
   color: rgb(255, 255, 255) 
 } */
 
-.react-calendar{
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-weight: 100;
+  font-size: larger;
+}
+
+.react-calendar, .react-calendar *, .react-calendar *:before, .react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: aliceblue;
+  position: relative;
+}
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+  background-color: #161619;
+}
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+  background-color: #161619;
+}
+
+/* .react-calendar{
   margin-top: 50px;
+} */
+
+.react-calendar__navigation__arrow.react-calendar__navigation__prev-button{
+   left: -99px;
+  top: 130px;
+  font-size: xxx-large;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.react-calendar__navigation__arrow.react-calendar__navigation__next-button{
+  left: 99px;
+  top: 130px;
+  font-size: xxx-large;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+abbr[title]{
+  text-decoration: none;
 }
