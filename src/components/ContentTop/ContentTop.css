@@ -15,8 +15,12 @@
 .sidebar-toggler img {
   width: 20px;
 }
+
+.sidebar-toggler img:hover{
+  filter: brightness(10) invert(1);
+}
 .content-top-title {
-  color: var(--clr-white);
+  color: black;
   font-size: 20px;
   font-weight: 600;
 }
@@ -27,7 +31,7 @@
   width: 24px;
 }
 .content-top-btn img:hover {
-  filter: brightness(0) invert(1);
+  filter: brightness(10) invert(1);
 }
 .content-top-left {
   display: flex;

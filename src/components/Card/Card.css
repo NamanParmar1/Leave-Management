@@ -23,7 +23,7 @@ background-color: #1a1919;
 box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 
 backdrop-filter: blur(15px);
-/* color: #060606; */
+ color: black; 
 }
 
 
@@ -57,7 +57,10 @@ backdrop-filter: blur(15px);
 .grid-item-top-r-title{
   text-align: right;
 }
-
+.grid-c6:hover .grid-item-top-r-title{
+  color: aliceblue;
+  text-align: right;
+}
 .grid-c6 .grid-item-top-r .cover {
   display: flex;
   flex-direction: row-reverse;
@@ -73,7 +76,7 @@ background-color: #1a1919;
 /* box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25); */
 
 /* backdrop-filter: blur(15px); */
-/* color: #060606; */
+ color:aliceblue; 
 }
 
 
@@ -84,13 +87,15 @@ background-color: #1a1919;
 }
 
 .grid-c6 .grid-item-top-r .subset {
+  background-color: aliceblue;
   font-weight: 300;
   font-size: 14px;
-  color: antiquewhite;
+  color: black;
   text-align: right;
 }
 
 .grid-c6:hover .grid-item-top-r .subset {
-  /* color: #060606; */
+   color: antiquewhite; 
+   background-color: #1a1919;
 }
 
