@@ -111,12 +111,12 @@ button {
 }
 
 .Toastify__toast-theme--light {
-  background:  #0f0f0f;
-  color: antiquewhite;
-  /* background-image: url(./assets/images/planeanimation.gif); */
+  background:  aliceblue;
+  color: black;
+  
 }
 
 .Toastify__close-button--light {
-  color: antiquewhite;
+  color: black;
   opacity: 0.8;
 }

@@ -13,7 +13,8 @@
 
 .main-content {
   position: relative;
-  background-color: aliceblue;
+  background-color: darkgray;
+  /* background-image: url('../assets/background/wallpaper.png'); */
   flex: 1;
   padding: 32px;
 }
@@ -67,8 +68,8 @@
 }
 
 .Toastify__toast-theme--light {
-  background: black;
-  color: antiquewhite;
+  background: darkgray;
+  color: black;
 }
 
 .blurred::before {

@@ -67,7 +67,7 @@ backdrop-filter: blur(15px);
 }
 
 .grid-c6 .grid-item-top-r .text {
-  background-color: #292929;
+  /* background-color: #292929; */
   
 }
 .grid-c6:hover  .grid-item-top-r .text{
@@ -87,7 +87,7 @@ background-color: #1a1919;
 }
 
 .grid-c6 .grid-item-top-r .subset {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   font-weight: 300;
   font-size: 14px;
   color: black;
