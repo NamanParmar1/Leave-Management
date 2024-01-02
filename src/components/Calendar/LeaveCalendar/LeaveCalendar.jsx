@@ -92,7 +92,7 @@ const LeaveCalendar = () => {
 
     return (
       <div className="modal-content">
-        <h3 style={{ marginBottom: '10px' }}>Leave Details</h3>
+        <h3 style={{ marginBottom: '10px', color:'black'}}>Leave Details</h3>
         {leaveDetailsForDate.map((leave) => (
           <div key={leave.id} className="leave-box">
             <p className="employee-name" style={{ color: employeeDetailsMap.get(leave.Name) }}>
@@ -112,6 +112,7 @@ const LeaveCalendar = () => {
   };
 
   const getEmployeeColorChart = () => {
+    //for admin
     if (isAdmin) {
       return (
         <div className='emp-color'>
@@ -139,7 +140,7 @@ const LeaveCalendar = () => {
         </div>
       );
     } else {
-      // Non-admin user, show only their color chart
+      // other than admin
       const currentUser = employeeDetails.find((employee) => employee.name === userInfoData.name);
       if (currentUser) {
         return (

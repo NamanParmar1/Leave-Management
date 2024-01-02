@@ -29,7 +29,7 @@ export const members = [
         designation: "Programmer Analyst Trainee-GE",
         team: "ADM AVM HC Delivery",
         location: "Technocomplex (TCX) STPI",
-        birthday:"2023-12-17"
+        birthday:"2023-12-26"
     },
     {
         id: 9,
@@ -38,7 +38,7 @@ export const members = [
         designation: "Programmer Analyst Trainee-GE",
         team: "ADM AVM HC Delivery",
         location: "Technocomplex (TCX) STPI",
-        birthday:"2024-12-15"
+        birthday:"2023-12-29"
     },
     {
         id: 10,
@@ -47,7 +47,7 @@ export const members = [
         designation: "Programmer Analyst Trainee-GE",
         team: "ADM AVM HC Delivery",
         location: "Technocomplex (TCX) STPI",
-        birthday:"2024-12-17"
+        birthday:"2024-12-27"
     },
     {
         id: 11,
@@ -363,7 +363,7 @@ export const employeeDetails = [
     },
     {
       holidayDescription: "Christmas",
-      date: "2023-12-19",
+      date: "2023-12-26",
       day: "Monday",
       locations: {
         Chennai: "RH",

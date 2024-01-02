@@ -33,8 +33,8 @@ const History = () => {
       <h2 className='history-heading'>Leave Data</h2>
       {isAdmin ? (
         // Display all leave details to the admin
-        <table>
-          <thead>
+        <table className='table-leave'>
+          <thead className='thead-leave'>
             <tr>
               <th>Name</th>
               <th>Leave Start Date</th>
@@ -57,8 +57,8 @@ const History = () => {
         </table>
       ) : (
         // Display only individual's leave details to the employee
-        <table>
-          <thead>
+        <table className='table-leave'>
+          <thead className='thead-leave'>
             <tr className='history-table-row'>
                 <th>Leave Start Date</th>
                 <th>Leave End Date</th>

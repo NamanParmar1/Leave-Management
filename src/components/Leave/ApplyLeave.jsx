@@ -160,7 +160,7 @@ const ApplyLeave = () => {
         <div className='otherleave-content'>
           <form onSubmit={handleSubmit}>
             <div className='first-line'>
-              <div className="card card--inverted">
+              <div className="card ">
                 <label className="input">
                   Start Date:
                   <input className="input__field"
@@ -172,7 +172,7 @@ const ApplyLeave = () => {
                   />
                 </label>
               </div>
-              <div className="card card--inverted">
+              <div className="card ">
                 <label className="input">
                   End Date:
                   <input className="input__field"
@@ -186,7 +186,7 @@ const ApplyLeave = () => {
               </div>
             </div>
             <div className='second-line'>
-              <div className="card card--inverted">
+              <div className="card ">
                 <label className="input">
                   Duration:
                   <input className="input__field" value={leaveDuration} disabled></input>
@@ -210,7 +210,7 @@ const ApplyLeave = () => {
               </div>
             </div>
             <div className='third-line'>
-              <div className="card card--inverted">
+              <div className="card ">
                 <label className='input'>
                   Reason:
                   <textarea className="input__field"

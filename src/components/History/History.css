@@ -5,7 +5,8 @@
   .history-heading {
     margin-top:50px ;
     text-align: center;
-    color: white;
+    color: whitesmoke;
+    background-color: black;
   }
   
   /* Style for the table */
@@ -16,8 +17,8 @@
   }
   
   table th {
-    background-color: #333;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     padding: 8px;
   }
   
@@ -26,3 +27,12 @@
     padding: 8px;
   }
   
+  .table-leave{
+    color:black;
+    background-color: whitesmoke;
+  }
+
+  .thead-leave{
+    background-color: black;
+    color: white;
+  }
