@@ -13,15 +13,14 @@ body {
   /* background: rgba(0, 0, 0, 0.4); */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: row-reverse;
   /* height: 100vh; */
-
 }
 
 .cal-modal {
   /* background: #1D252C; */
-  color: #fff;
+  color: black;
   padding: 20px 20px;
   text-align: center;
 }
@@ -46,7 +45,7 @@ body {
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  color: #fff;
+  color: black;
   top: 0;
 }
 
@@ -112,7 +111,7 @@ body {
 }
 
 #calendar .flatpickr-weekdays .flatpickr-weekday {
-  color: #fff;
+  color: black;
   font-weight: 700;
 }
 
@@ -129,7 +128,7 @@ body {
 #calendar .flatpickr-day {
   /* background: #fff; */
   border: 0;
-  color: ghostwhite;
+  color: black;
   font-weight: 500;
   transition: color 0.1s, background 0.1s;
 }
@@ -137,6 +136,7 @@ body {
 #calendar .flatpickr-day:hover {
   background: #f3f6f2;
   color: #060606;
+  border: 1px solid black;
 }
 
 #calendar .flatpickr-day.flatpickr-disabled,
@@ -207,6 +207,7 @@ body {
   background-size: contain;
   border: 1px solid #6da9b0;
   background-color: black;
+  color: aliceblue;
 }
 
 #calendar .flatpickr-day.holiday:hover {
@@ -216,9 +217,10 @@ body {
 
 .holiday-list-trial{
   margin-left: 10%;
-  color: white;
+  color: black;
   padding-bottom: 300px;
   margin-top: 10%;
+  font-weight: 500;
 }
 
 .holiday-list-heading{

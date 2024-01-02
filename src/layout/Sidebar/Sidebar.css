@@ -167,7 +167,7 @@
   color: oldlace;
   font-weight: 600;
   font-size: larger;
-  cursor: pointer;
+
 
   height: 44px;
   border-radius: 8px;
@@ -234,8 +234,5 @@
   border-bottom: 2px solid antiquewhite;
 }
 
-.nav-list{
-  cursor: pointer;
-}
 
 

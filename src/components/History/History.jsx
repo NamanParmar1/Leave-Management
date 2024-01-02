@@ -43,7 +43,7 @@ const History = () => {
               <th>Reason</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='tbody-leave'>
             {leaveData.map((leave) => (
               <tr key={leave.id}>
                 <td>{leave.Name}</td>
@@ -57,8 +57,8 @@ const History = () => {
         </table>
       ) : (
         // Display only individual's leave details to the employee
-        <table className='table-leave'>
-          <thead className='thead-leave'>
+        <table>
+          <thead>
             <tr className='history-table-row'>
                 <th>Leave Start Date</th>
                 <th>Leave End Date</th>

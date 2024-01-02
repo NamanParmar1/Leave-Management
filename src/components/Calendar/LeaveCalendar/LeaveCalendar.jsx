@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import Sidebar from '../../../layout/Sidebar/Sidebar';
-import Modal from 'react-modal';
-import './HighlightedLeaves.css';
-import { useLeaveContext } from '../../../context/LeaveContext';
-import ContentTop from '../../ContentTop/ContentTop';
-import { employeeDetails, userInfoData } from '../../../data/data';
-import firebaseApp from '../../../Firebase/Firebase';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import Sidebar from "../../../layout/Sidebar/Sidebar";
+import Modal from "react-modal";
+import "./HighlightedLeaves.css";
+import { useLeaveContext } from "../../../context/LeaveContext";
+import ContentTop from "../../ContentTop/ContentTop";
+import { employeeDetails, userInfoData } from "../../../data/data";
+import firebaseApp from "../../../Firebase/Firebase";
+import { getDatabase, ref, onValue } from "firebase/database";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 const LeaveCalendar = () => {
   const { leaveData, setLeaveData } = useLeaveContext();
   const [selectedDate, setSelectedDate] = useState(null);
   const oktaUserEmail = userInfoData.email; // Replace with your Okta user email or fetch it dynamically
 
-  const employeeDetailsMap = new Map(employeeDetails.map(({ name, color }) => [name, color]));
+  const employeeDetailsMap = new Map(
+    employeeDetails.map(({ name, color }) => [name, color])
+  );
 
   useEffect(() => {
     const database = getDatabase(firebaseApp);
-    const leaveRef = ref(database, 'leave');
+    const leaveRef = ref(database, "leave");
 
     // Listen for changes in the "leave" node
     const unsubscribe = onValue(leaveRef, (snapshot) => {
@@ -36,9 +38,7 @@ const LeaveCalendar = () => {
     return () => unsubscribe();
   }, [setLeaveData]);
 
-  
-
-  const isAdmin = oktaUserEmail.endsWith('@cigna.com');
+  const isAdmin = oktaUserEmail.endsWith("@cigna.com");
 
   const getHighlightedDates = () => {
     const highlightedDates = [];
@@ -75,28 +75,35 @@ const LeaveCalendar = () => {
 
     const leaveDetailsForDate = isAdmin
       ? leaveData.filter(
-        (leave) =>
-          new Date(leave.startDate).setHours(0, 0, 0, 0) <= selectedDateWithoutTime &&
-          new Date(leave.endDate).setHours(0, 0, 0, 0) >= selectedDateWithoutTime
-      )
+          (leave) =>
+            new Date(leave.startDate).setHours(0, 0, 0, 0) <=
+              selectedDateWithoutTime &&
+            new Date(leave.endDate).setHours(0, 0, 0, 0) >=
+              selectedDateWithoutTime
+        )
       : leaveData.filter(
-        (leave) =>
-          new Date(leave.startDate).setHours(0, 0, 0, 0) <= selectedDateWithoutTime &&
-          new Date(leave.endDate).setHours(0, 0, 0, 0) >= selectedDateWithoutTime &&
-          leave.Name === userInfoData.name
-      );
+          (leave) =>
+            new Date(leave.startDate).setHours(0, 0, 0, 0) <=
+              selectedDateWithoutTime &&
+            new Date(leave.endDate).setHours(0, 0, 0, 0) >=
+              selectedDateWithoutTime &&
+            leave.Name === userInfoData.name
+        );
 
     if (leaveDetailsForDate.length === 0) {
-      return <p>No leave details available for the selected date.</p>;
+      return <div className="no-leave" style={{color: "aliceblue"}}>No leave details available for the selected date.</div>;
     }
 
     return (
       <div className="modal-content">
-        <h3 style={{ marginBottom: '10px', color:'black'}}>Leave Details</h3>
+        <h3 style={{ marginBottom: "10px", color: "aliceblue" }}>Leave Details</h3>
         {leaveDetailsForDate.map((leave) => (
           <div key={leave.id} className="leave-box">
-            <p className="employee-name" style={{ color: employeeDetailsMap.get(leave.Name) }}>
-              {leave.Name}{' '}
+            <p
+              className="employee-name"
+              style={{ color: employeeDetailsMap.get(leave.Name) }}
+            >
+              {leave.Name}{"  :"}
             </p>
             <p>{leave.leaveType} Leave </p>
             <p>Start Date: {leave.startDate} </p>
@@ -108,16 +115,15 @@ const LeaveCalendar = () => {
   };
 
   const getEmployeeColor = (employeeName) => {
-    return employeeDetailsMap.get(employeeName) || 'black';
+    return employeeDetailsMap.get(employeeName) || "black";
   };
 
   const getEmployeeColorChart = () => {
-    //for admin
     if (isAdmin) {
       return (
-        <div className='emp-color'>
-          <h2 style={{ margin: '20px' }}>Employee Details</h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className="emp-color">
+          <h2 style={{ margin: "20px" }}>Employee Details</h2>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <tbody>
               {employeeDetails.map(({ name }) => (
                 <tr key={name}>
@@ -126,10 +132,10 @@ const LeaveCalendar = () => {
                     <div
                       style={{
                         backgroundColor: getEmployeeColor(name),
-                        borderRadius: '50%',
-                        height: '20px',
-                        width: '20px',
-                        margin: '0 auto',
+                        borderRadius: "50%",
+                        height: "20px",
+                        width: "20px",
+                        margin: "0 auto",
                       }}
                     ></div>
                   </td>
@@ -140,19 +146,21 @@ const LeaveCalendar = () => {
         </div>
       );
     } else {
-      // other than admin
-      const currentUser = employeeDetails.find((employee) => employee.name === userInfoData.name);
+      // Non-admin user, show only their color chart
+      const currentUser = employeeDetails.find(
+        (employee) => employee.name === userInfoData.name
+      );
       if (currentUser) {
         return (
-          <div className='emp-color'>
-            <h2 style={{ margin: '20px' }}>Your Calendar Color</h2>
+          <div className="emp-color">
+            <h2 style={{ margin: "20px" }}>Your Calendar Color</h2>
             <div
               style={{
                 backgroundColor: getEmployeeColor(currentUser.name),
-                borderRadius: '50%',
-                height: '20px',
-                width: '20px',
-                margin: '0 auto',
+                borderRadius: "50%",
+                height: "20px",
+                width: "20px",
+                margin: "0 auto",
               }}
             ></div>
           </div>
@@ -162,53 +170,66 @@ const LeaveCalendar = () => {
 
     return null;
   };
-  
 
   return (
     <>
       <Sidebar />
       <div className="main-content">
         <ContentTop />
-        <div className='main-cal'>
+        <div className="main-cal">
           <Calendar
             tileContent={({ date }) => {
               const highlightedDates = getHighlightedDates();
-              const isAdminHighlighted = isAdmin && highlightedDates.some((d) => d.date.toDateString() === date.toDateString());
+              const isAdminHighlighted =
+                isAdmin &&
+                highlightedDates.some(
+                  (d) => d.date.toDateString() === date.toDateString()
+                );
               const userHighlightedDates = highlightedDates.filter(
                 (highlightedDate) =>
                   highlightedDate.date.toDateString() === date.toDateString() &&
                   highlightedDate.employeeName === userInfoData.name
               );
 
-              const dots = isAdminHighlighted
-                ? highlightedDates
-                  .filter((highlightedDate) => highlightedDate.date.toDateString() === date.toDateString())
-                  .map((highlightedDate, index) => (
-                    <div
-                      key={index}
-                      style={{
-                        backgroundColor: getEmployeeColor(highlightedDate.employeeName),
-                        borderRadius: '50%',
-                        height: '5px',
-                        width: '5px',
-                        margin: '2px',
-                      }}
-                    ></div>
-                  ))
-                : userHighlightedDates.map((highlightedDate, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      backgroundColor: getEmployeeColor(highlightedDate.employeeName),
-                      borderRadius: '50%',
-                      height: '5px',
-                      width: '5px',
-                      margin: '2px',
-                    }}
-                  ></div>
-                ));
-
-              return dots.length > 0 ? dots : null;
+              return (
+                <div className="dots_box" style={{display: "flex", flexWrap: "wrap", width:"20px"}}>
+                  {isAdminHighlighted
+                    ? highlightedDates
+                        .filter(
+                          (highlightedDate) =>
+                            highlightedDate.date.toDateString() ===
+                            date.toDateString()
+                        )
+                        .map((highlightedDate, index) => (
+                          <div
+                            key={index}
+                            style={{
+                              backgroundColor: getEmployeeColor(
+                                highlightedDate.employeeName
+                              ),
+                              borderRadius: "50%",
+                              height: "5px",
+                              width: "5px",
+                              margin: "2px",
+                            }}
+                          ></div>
+                        ))
+                    : userHighlightedDates.map((highlightedDate, index) => (
+                        <div
+                          key={index}
+                          style={{
+                            backgroundColor: getEmployeeColor(
+                              highlightedDate.employeeName
+                            ),
+                            borderRadius: "50%",
+                            height: "5px",
+                            width: "5px",
+                            margin: "2px",
+                          }}
+                        ></div>
+                      ))}
+                </div>
+              );
             }}
             onClickDay={(date) => setSelectedDate(date)}
           />
@@ -220,26 +241,26 @@ const LeaveCalendar = () => {
             onRequestClose={() => setSelectedDate(null)}
             style={{
               overlay: {
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
               },
               content: {
-                top: '50%',
-                left: '50%',
-                right: 'auto',
-                bottom: 'auto',
-                marginRight: '-50%',
-                transform: 'translate(-50%, -50%)',
-                maxHeight: '80vh',
-                overflow: 'auto',
+                border: "none",
+                background: "none",
+                top: "50%",
+                left: "50%",
+                right: "auto",
+                bottom: "auto",
+                marginRight: "-50%",
+                transform: "translate(-50%, -50%)",
+                maxHeight: "80vh",
+                overflow: "auto",
               },
             }}
           >
             {isAdmin ? (
               getLeaveDetailsForDate()
             ) : (
-              <div>
-                {getLeaveDetailsForDate()}
-              </div>
+              <div>{getLeaveDetailsForDate()}</div>
             )}
           </Modal>
         </div>

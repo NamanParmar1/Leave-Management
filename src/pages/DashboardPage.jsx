@@ -335,8 +335,9 @@ const DashboardPage = () => {
           hasBirthdayToastShown = true;
         }
 
-        localStorage.setItem("hasToastShown", "true");
+        //localStorage.setItem("hasToastShown", "true");
       }
+      localStorage.setItem("hasToastShown", "true");
     }
   }, [userInfoData]);
 
