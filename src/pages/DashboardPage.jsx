@@ -23,11 +23,11 @@ const DashboardPage = () => {
 
   useEffect(() => {
     if (!authState || !authState.isAuthenticated) {
-      // When the user isn't authenticated, forget any user info
+    
       setUserInfo(userInfoData);
     } else {
       setUserInfo(authState.idToken.claims);
-      // Update userInfoData in data.js
+   
       Object.assign(userInfoData, authState.idToken.claims);
     }
   }, [authState, oktaAuth]);
@@ -36,7 +36,7 @@ const DashboardPage = () => {
     const database = getDatabase(firebaseApp);
     const leaveRef = ref(database, "leave");
 
-    // Listen for changes in the "leave" node
+ 
     const unsubscribe = onValue(leaveRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
@@ -46,16 +46,13 @@ const DashboardPage = () => {
       }
     });
 
-    // Cleanup the subscription when the component unmounts
+
     return () => unsubscribe();
   }, [setLeaveData]);
 
   const handleLeaveToast = (leaveArray) => {
     const isAdmin = userInfoData?.email?.endsWith("@cigna.com");
     const hasLeaveToastShown = localStorage.getItem("hasLeaveToastShown");
-
-    // console.log("isAdmin: ", {isAdmin});
-    // console.log("leaveArray: ",leaveArray);
 
     if (!hasLeaveToastShown && isAdmin) {
       const today = new Date();
@@ -75,20 +72,14 @@ const DashboardPage = () => {
         const startDate = leave.startDate;
         // const formattedStartDate = startDate.toISOString().split('T')[0];
         const endDate = leave.endDate;
-        // const formattedEndDate = endDate.toISOString().split('T')[0];
-
+        
         return (
           startDate === formattedTwoDaysFromNow ||
           startDate === formattedTommorrow ||
           (todayDate >= startDate && todayDate <= endDate)
         );
       });
-      // console.log("today: ", todayDate);
-      // console.log("formattedTwoDaysFromNow: ", formattedTwoDaysFromNow);
-      // console.log("formattedTommorrow: ", formattedTommorrow);
-
-      // console.log("upcomming leaves: ",upcomingLeaves);
-
+    
       if (upcomingLeaves.length > 0) {
         upcomingLeaves.forEach((leave) => {
           const startDate = new Date(leave.startDate);
@@ -102,17 +93,15 @@ const DashboardPage = () => {
             if (leaveStartDateFormatted !== leaveEndDateFormatted) {
               toastMessage1 = `${leave.Name} will be on ${leave.leaveType} leave! From: ${leaveStartDateFormatted} To: ${leaveEndDateFormatted} due to ${leave.reason}`;
             }
-            // Show toast 2 days prior to leave start
+           
             setToastCount((prevCount) => prevCount + 1);
             toast(
               <div className="toast-content">
                 <div className="toast-icon">
-                  {/* Use a suitable leave-related icon here */}
                   <img src={bellGif} alt="Leave Icon" className="icon" />
                 </div>
                 <div>
                   <p className="toast-username">{toastMessage1}</p>
-                  {/* <p>{`From: ${leaveStartDateFormatted} To: ${leaveEndDateFormatted}`}</p> */}
                 </div>
               </div>,
               {
@@ -132,17 +121,14 @@ const DashboardPage = () => {
             if (leaveStartDateFormatted !== leaveEndDateFormatted) {
               toastMessage1 = `${leave.Name} is on ${leave.leaveType} leave! till: ${leaveEndDateFormatted} due to ${leave.reason}`;
             }
-            // Show toast during leave period
             setToastCount((prevCount) => prevCount + 1);
             toast(
               <div className="toast-content">
                 <div className="toast-icon">
-                  {/* Use a suitable leave-related icon here */}
                   <img src={bellGif} alt="Leave Icon" className="icon" />
                 </div>
                 <div>
                   <p className="toast-username">{toastMessage1}</p>
-                  {/* <p>{``}</p> */}
                 </div>
               </div>,
               {
@@ -163,7 +149,6 @@ const DashboardPage = () => {
     localStorage.setItem("hasLeaveToastShown", "true");
   };
 
-  // console.log(leaveData);
 
   useEffect(() => {
     const hasToastShown = localStorage.getItem("hasToastShown");
@@ -192,13 +177,11 @@ const DashboardPage = () => {
           }
         );
       }
-      //setToastCount(0);
       const today = new Date().toISOString().split("T")[0];
       const formattedToday = today.substring(5);
       const nextWeek = new Date(today);
       nextWeek.setDate(nextWeek.getDate() + 7);
       const formattedNextWeek = nextWeek.toISOString().split("T")[0];
-      // Format: 'YYYY-MM-DD'
 
       const todayHolidays = holidays.filter(
         (holiday) => holiday.date.substring(5) === formattedToday
@@ -275,7 +258,6 @@ const DashboardPage = () => {
           (todayBirthdays.length > 0 || thisWeekBirthdays.length > 0) &&
           !hasBirthdayToastShown
         ) {
-          //console.log("thisweekbd", thisWeekBirthdays);
           setToastCount((prevCount) => prevCount + 1);
           toast(
             <div className="toast-content">
@@ -335,7 +317,6 @@ const DashboardPage = () => {
           hasBirthdayToastShown = true;
         }
 
-        //localStorage.setItem("hasToastShown", "true");
       }
       localStorage.setItem("hasToastShown", "true");
     }

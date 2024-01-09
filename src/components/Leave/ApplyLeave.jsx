@@ -24,7 +24,6 @@ const ApplyLeave = () => {
     const database = getDatabase(firebaseApp);
     const leaveRef = ref(database, 'leave');
 
-    // Listen for changes in the "leave" node
     const unsubscribe = onValue(leaveRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
@@ -33,7 +32,7 @@ const ApplyLeave = () => {
       }
     });
 
-    // Cleanup the subscription when the component unmounts
+   
     return () => unsubscribe();
   }, [setLeaveData]);
 
@@ -54,16 +53,6 @@ const ApplyLeave = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // const shouldSubmit = window.confirm(
-    //   'Are you sure you want to submit the leave application? Once submitted, it cannot be modified or cancelled.'
-    // );
-
-    // if (!shouldSubmit) {
-    //   // User clicked "Cancel" in the confirmation dialog
-    //   return;
-    // }
-
     const startDate = new Date(leaveDetails.startDate);
     const endDate = new Date(leaveDetails.endDate);
     const currentDate = new Date();
@@ -81,7 +70,7 @@ const ApplyLeave = () => {
       return;
     }
 
-    // Check for overlapping leave
+    // Checking overlapped leave
     const overlappingLeave = leaveData.find((leave) => {
       const leaveStartDate = new Date(leave.startDate);
       const leaveEndDate = new Date(leave.endDate);
@@ -101,19 +90,14 @@ const ApplyLeave = () => {
       return;
     }
 
-    // If no overlapping leave, proceed with leave application
     const newLeave = { ...leaveDetails, id: new Date().getTime().toString() };
 
-    // Use Firebase to push data
     const database = getDatabase(firebaseApp);
     const leaveRef = ref(database, 'leave');
     await push(leaveRef, newLeave);
-
-    // Update local state
     const updatedLeaveData = [...leaveData, newLeave];
     setLeaveData(updatedLeaveData);
 
-    // Clear form data after submission
     setLeaveDetails({
       startDate: '',
       endDate: '',
@@ -221,11 +205,6 @@ const ApplyLeave = () => {
                   />
                 </label>
               </div>
-              {/* <div className='btn-wrap'>
-                <button className='btn' type="submit">
-                  Submit Leave Application
-                </button>
-              </div> */}
               <div className='btn-wrap'>
                 <button className='btn' type="button" onClick={handleOpenModal}>
                   Submit Leave Application

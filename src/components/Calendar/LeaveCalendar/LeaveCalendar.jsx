@@ -15,7 +15,7 @@ Modal.setAppElement("#root");
 const LeaveCalendar = () => {
   const { leaveData, setLeaveData } = useLeaveContext();
   const [selectedDate, setSelectedDate] = useState(null);
-  const oktaUserEmail = userInfoData.email; // Replace with your Okta user email or fetch it dynamically
+  const oktaUserEmail = userInfoData.email; 
 
   const employeeDetailsMap = new Map(
     employeeDetails.map(({ name, color }) => [name, color])
@@ -24,8 +24,6 @@ const LeaveCalendar = () => {
   useEffect(() => {
     const database = getDatabase(firebaseApp);
     const leaveRef = ref(database, "leave");
-
-    // Listen for changes in the "leave" node
     const unsubscribe = onValue(leaveRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
@@ -34,7 +32,7 @@ const LeaveCalendar = () => {
       }
     });
 
-    // Cleanup the subscription when the component unmounts
+    
     return () => unsubscribe();
   }, [setLeaveData]);
 

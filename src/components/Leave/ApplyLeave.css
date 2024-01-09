@@ -1,36 +1,27 @@
-/* ApplyLeave Form Styling here */
-
 .main-content {
   padding: 20px;
 }
 
 .otherleave-content {
-  /* align-content: center; */
   display: flex;
   flex-direction: column;
-  /* max-width: 850px; */
   margin-top: 30px;
-  /* margin-left: 50px; */
   margin-right: 50px;
   padding-left: 80px;
-  /* color: antiquewhite; */
 }
 
 
 .third-line {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 55px; */
 }
 .second-line {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 55px;*/
 } 
 .first-line {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 55px;*/
 } 
 select option {
   margin: 40px;
@@ -74,15 +65,12 @@ mark {
 .card {
   font-weight: 300;
   font-family: 'Inter', sans-serif;
-  /* background: var(--color-background); */
   background: transparent;
   padding: 2rem;
   margin-top: 1rem;
   border-radius: 4px;
   width: -webkit-fill-available;
   line-height: 1.4;
-  /* color: white; */
-  
 }
 
 
@@ -108,7 +96,6 @@ mark {
     width: 100%;
     border-bottom: 3px solid currentColor;
     padding: 0.75rem 0.5rem;
-    /* color: antiquewhite; */
     background: transparent;
     border-radius: 4px;
     border-top: none;
@@ -127,7 +114,6 @@ mark {
   line-height: 1.4;
   color: black;
   padding: 0.5rem 1rem;
-  /* background: border-box; */
   border: 3px solid black;
   border-radius: 4px;
   font-weight: 900;
@@ -137,9 +123,6 @@ mark {
   background-color: black;
   color: aliceblue;
 }
-
-/* Modal Styling from here */
-
 .confirmation-modal-overlay {
   position: fixed;
   top: 0;

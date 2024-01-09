@@ -1,4 +1,3 @@
-// Sidebar.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { personsImgs, iconsImgs } from '../../utils/images';
@@ -9,15 +8,10 @@ import { SidebarContext } from '../../context/sidebarContext';
 import { useOktaAuth } from '@okta/okta-react';
 import { set } from 'firebase/database';
 
-
-
-
 const Sidebar = () => {
   const { pathname } = useLocation();
-  //const [isCalendarMenuOpen, setCalendarMenuOpen] = useState(pathname.startsWith('/calendar')? true:false);
   const [calendarMenuClass, setCalendarMenuClass] = useState(pathname.startsWith('/calendar')?'open':'');
   const [sidebarClass, setSidebarClass] = useState('');
-  // const [name, setName] = useState(userInfoData?.name);
   const { isSidebarOpen } = useContext(SidebarContext);
   const navigate = useNavigate();
 
@@ -28,21 +22,6 @@ const handleLogout = async () => {
   localStorage.removeItem('hasLeaveToastShown');
   await oktaAuth.signOut()
 };
-  // useEffect(() => {
-  //   setName(userInfoData?.name)
-  // }, [userInfoData]);
-
-  // useEffect(() => {
-  //   if (pathname.startsWith('/calendar')) {
-  //     setCalendarMenuClass('open');
-  //   } else {
-  //     setCalendarMenuClass('');
-  //   }
-  // }, [pathname]);
-
-  
-
-
 
   useEffect(() => {
     if (isSidebarOpen) {
@@ -53,7 +32,6 @@ const handleLogout = async () => {
   }, [isSidebarOpen]);
 
   const handleCalendarClick = () => {
-    //setCalendarMenuOpen((isCalendarMenuOpen)=>!isCalendarMenuOpen);
     if(!pathname.startsWith('/calendar')){
       navigate('/calendar/leave');
       setCalendarMenuClass('open');

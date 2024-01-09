@@ -9,7 +9,6 @@ const LeaveData = {
     email: 'naman@parmar.com',
     leaveData: [],
   },
-  // Add similar entries for other users
 };
 
   export default LeaveData;

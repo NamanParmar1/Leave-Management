@@ -1,12 +1,6 @@
-// App.jsx
-import React, { useState } from 'react';
-import { useParams, BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-
-import Sidebar from './layout/Sidebar/Sidebar';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import DashboardPage from './pages/DashboardPage';
-import MembersPage from './pages/MemberPage';
 import CalenderPage from './pages/CalenderPage';
-// import ApplyLeave from './pages/ApplyLeave';
 import LeaveHistory from './pages/LeaveHistory';
 import Alerts from './pages/Alerts';
 import { ToastContainer } from 'react-toastify';
@@ -16,15 +10,12 @@ import { LoginCallback, Security, useOktaAuth } from '@okta/okta-react';
 import oktaAuth from './components/OktaConfig/oktaAuth';
 import PrivateRoute from './components/PrivateRoute/privateroute';
 import LoginPage from './components/Login/LoginPage';
-// import LeaveApplication from './components/Leave/LeaveApplication';
 import ApplyLeave from './components/Leave/ApplyLeave';
 import LeaveCalendar from './components/Calendar/LeaveCalendar/LeaveCalendar';
 import { userInfoData } from './data/data';
 import { useLeaveContext } from './context/LeaveContext';
 import { useEffect } from 'react';
-import BirthdayCalendar from './components/Calendar/BirthdayCalendar/BithdayCalendar';
 import BdayCalendarPage from './pages/BdayCalendarPage'
-//import LeaveHistory from './pages/LeaveHistory';
 
 function App() {
   console.log(userInfoData.name);
@@ -34,7 +25,7 @@ function App() {
   };
   const { setLeaveData } = useLeaveContext();
 
-  
+
 
   useEffect(() => {
     const storedLeaveData = JSON.parse(localStorage.getItem('leaveData')) || [];
@@ -44,21 +35,19 @@ function App() {
   return (
     <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
 
-      
+
       <div className="app">
         <Routes>
-        <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/login/callback" element={<LoginCallback />} />
           <Route path="/home" element={<PrivateRoute element={DashboardPage} />} />
-          {/* <Route path="/page/2" element={<MembersPage/>} /> */}
           <Route path="/calendar/leave" element={<PrivateRoute element={LeaveCalendar} />} />
           <Route path="/calendar/holiday" element={<PrivateRoute element={CalenderPage} />} />
           <Route path="/calendar/birthday" element={<PrivateRoute element={BdayCalendarPage} />} />
           <Route path="/applyleave" element={<PrivateRoute element={ApplyLeave} />} />
           <Route path="/leavehistory" element={<PrivateRoute element={LeaveHistory} />} />
           <Route path="/notifications" element={<PrivateRoute element={Alerts} />} />
-          {/* <Route path="/page/7" element={<Alerts/>} />
-          <Route path="/page/8" element={<Alerts/>} /> */}
+
         </Routes>
         <ToastContainer />
       </div>

@@ -1,6 +1,4 @@
-/* grid c6 */
 .grid-c6{
-  /* border: 1px solid transparent; */
   border: 1px solid rgb(0 0 0 / 45%);
   
   
@@ -11,12 +9,6 @@
 }
 
 .grid-c6:hover{
-  /* border: 1px solid var(--clr-primar-light);
-  /* background-color: var(--clr-peach); */
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  color: #060606; */ 
-
   
 border-radius: 20px;
 background-color: #1a1919;
@@ -74,9 +66,7 @@ backdrop-filter: blur(15px);
 .grid-c6:hover  .grid-item-top-r .text{
 
 background-color: #1a1919;
-/* box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25); */
 
-/* backdrop-filter: blur(15px); */
  color:aliceblue; 
 }
 
@@ -88,7 +78,7 @@ background-color: #1a1919;
 }
 
 .grid-c6 .grid-item-top-r .subset {
-  /* background-color: aliceblue; */
+
   font-weight: 500;
   font-size: 14px;
   color: black;

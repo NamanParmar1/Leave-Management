@@ -11,6 +11,7 @@ const db = getDatabase(firebaseApp);
 
 import './TrialCalendar.css';
 import { members } from '../../data/data';
+import { toast } from 'react-toastify';
 
 const TrialCalendar = () => {
     const location = useLocation();
@@ -43,6 +44,10 @@ const TrialCalendar = () => {
     // };
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (currentDate > Bdate) {
+            toast.error('Oops!! Selected Date has already passed');
+            return;
+        }
 
         if (name.trim() === '') return;
 
@@ -172,6 +177,10 @@ const TrialCalendar = () => {
         title = 'Birthdays';
     }
 
+    const currentDate = new Date().toJSON().slice(0, 10);
+    console.log(currentDate + 'hello', Bdate + 'world')
+
+
     return (
         <div className="cal-modal-container">
             <div className="holiday-list-trial">
@@ -194,13 +203,15 @@ const TrialCalendar = () => {
                 {
                     <ul className="ul-b-list">
                         {birthdayData
-                            .filter((birthdays) => birthdays.userName === userInfoData.name)
+                            .filter((birthdays) => birthdays.userName === userInfoData.name && currentDate < birthdays.date)
                             .map((birthdays) => (
+
                                 <li key={birthdays.id}>
                                     {birthdays.name}'s birthday on {birthdays.date}
                                 </li>
                             ))}
                     </ul>
+
                 }
             </div>
             <div className="cal-modal">

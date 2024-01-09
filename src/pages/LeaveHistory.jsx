@@ -1,5 +1,4 @@
 import React from 'react';
-// import "../layout/Content/Content.css";
 import ContentTop from '../components/ContentTop/ContentTop';
 import Sidebar from '../layout/Sidebar/Sidebar';
 import History from '../components/History/History';

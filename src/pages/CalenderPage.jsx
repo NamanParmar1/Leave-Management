@@ -1,5 +1,5 @@
 import React, {useEffect}from 'react';
-// import "../layout/Content/Content.css";
+
 import ContentTop from '../components/ContentTop/ContentTop';
 import Sidebar from '../layout/Sidebar/Sidebar';
 
@@ -8,9 +8,6 @@ import TrialCalendar from '../components/TrialCalendar/TrialCalendar';
 
 
 const Calender = () => {
-  // useEffect(() => {
-  //   toast.success("Calender");
-  // }, []);
 
   return (
     <>

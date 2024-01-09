@@ -1,14 +1,9 @@
-.history-contents {
-    /* color: white; */
-  }
-  
   .history-heading {
     margin-top:50px ;
     text-align: center;
     color: black;
   }
-  
-  /* Style for the table */
+
   table {
     width: 100%;
     border-collapse: collapse;

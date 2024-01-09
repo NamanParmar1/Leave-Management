@@ -1,11 +1,7 @@
-
 import "./Card.css";
 
 const Card = ({ member }) => {
     const today = new Date().toISOString().split('T')[0].substring(5);
-    // console.log("today is: " + today);
-    // console.log("birthday: " + member.birthday);
-
 
     return (
         <div className={`grid-common grid-c6 ${member.birthday.substring(5) === today ? 'bd' : ''}`}>

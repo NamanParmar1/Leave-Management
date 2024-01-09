@@ -29,7 +29,6 @@ const LoginPage = () => {
     body = (
       <div className="cardforlogin">
         <img src={logo} className="logoofapp" alt="logo" />
-        {/* <p className="team-name">Welcome</p> */}
         <div className="Buttonslogin">
           <button className="btn-login" onClick={login}>Login</button>
         </div>
@@ -48,17 +47,3 @@ const LoginPage = () => {
 
 export default LoginPage;
 
-
-
-
-
-
-// if (authState?.isAuthenticated) {
-//   body = (
-//     <div style={{ textAlign: 'center' }}>
-//       {/* <div className="Buttons">
-//         <button onClick={logout}>Logout</button> */}
-//       </div>
-//     // </div>
-//   );
-// }

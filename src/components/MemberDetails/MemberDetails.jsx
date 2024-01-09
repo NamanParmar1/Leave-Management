@@ -7,7 +7,7 @@ const MemberDetails = ({ member }) => {
       <p>{member.designation}</p>
       <p>{member.team}</p>
       <p>{member.location}</p>
-      {/* Add other details you want to display */}
+
     </div>
   );
 };

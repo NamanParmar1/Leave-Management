@@ -3,13 +3,9 @@ import { personsImgs } from "../utils/images";
 
 export const navigationLinks = [
     { id: 1, page: '/home', title: 'Dashboard', image: iconsImgs.home },
-    // { id: 2, title: 'Members', image: iconsImgs.budget },
     { id: 3, page: "/calendar", title: 'Calendar', image: iconsImgs.calender },
     { id: 4, page: "/applyleave", title: 'Apply Leave', image: iconsImgs.applyleave },
     { id: 5, page: "/leavehistory", title: 'Leave History', image: iconsImgs.history }
-    // { id: 6, page: "/notifications", title: 'Notifications', image: iconsImgs.bell }
-    // { id: 7, title: 'Account', image: iconsImgs.user },
-    // { id: 8, title: 'Settings', image: iconsImgs.gears }
 ];
 
 export const members = [
