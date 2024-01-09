@@ -203,7 +203,7 @@ const TrialCalendar = () => {
                 {
                     <ul className="ul-b-list">
                         {birthdayData
-                            .filter((birthdays) => birthdays.userName === userInfoData.name && currentDate < birthdays.date)
+                            .filter((birthdays) => birthdays.userName === userInfoData.name && currentDate <= birthdays.date)
                             .map((birthdays) => (
 
                                 <li key={birthdays.id}>
