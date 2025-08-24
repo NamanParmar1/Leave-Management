@@ -1,4 +1,4 @@
-# Leave Management System
+# LeaveTracker
 
 A comprehensive, modern web application for managing employee leaves, holidays, and organizational events. Built with React and Firebase, featuring secure authentication and real-time data synchronization.
 
